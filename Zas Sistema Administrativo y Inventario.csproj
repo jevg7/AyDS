@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD345944-7676-483D-87E3-EBA8FD8B84C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Zas_Sistema_Administrativo_y_Inventario</RootNamespace>
+    <AssemblyName>Zas Sistema Administrativo y Inventario</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Añadirequipa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Añadirequipa.Designer.cs">
+      <DependentUpon>Añadirequipa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AñadirHerramient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirHerramient.Designer.cs">
+      <DependentUpon>AñadirHerramient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AñadirOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirOrden.Designer.cs">
+      <DependentUpon>AñadirOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Añadirreactiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Añadirreactiv.Designer.cs">
+      <DependentUpon>Añadirreactiv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AñadirUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirUsuarios.Designer.cs">
+      <DependentUpon>AñadirUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipamiento.Designer.cs">
+      <DependentUpon>Equipamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Herramientas.Designer.cs">
+      <DependentUpon>Herramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModHerramienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModHerramienta.Designer.cs">
+      <DependentUpon>ModHerramienta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarEquipa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarEquipa.Designer.cs">
+      <DependentUpon>ModificarEquipa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModOrden.Designer.cs">
+      <DependentUpon>ModOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modreactiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modreactiv.Designer.cs">
+      <DependentUpon>Modreactiv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModUsuario.Designer.cs">
+      <DependentUpon>ModUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes.Designer.cs">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallaprinci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallaprinci.Designer.cs">
+      <DependentUpon>Pantallaprinci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reactivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reactivos.Designer.cs">
+      <DependentUpon>Reactivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Añadirequipa.resx">
+      <DependentUpon>Añadirequipa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AñadirHerramient.resx">
+      <DependentUpon>AñadirHerramient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AñadirOrden.resx">
+      <DependentUpon>AñadirOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Añadirreactiv.resx">
+      <DependentUpon>Añadirreactiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AñadirUsuarios.resx">
+      <DependentUpon>AñadirUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipamiento.resx">
+      <DependentUpon>Equipamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Herramientas.resx">
+      <DependentUpon>Herramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModHerramienta.resx">
+      <DependentUpon>ModHerramienta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarEquipa.resx">
+      <DependentUpon>ModificarEquipa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModOrden.resx">
+      <DependentUpon>ModOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modreactiv.resx">
+      <DependentUpon>Modreactiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModUsuario.resx">
+      <DependentUpon>ModUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes.resx">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallaprinci.resx">
+      <DependentUpon>Pantallaprinci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reactivos.resx">
+      <DependentUpon>Reactivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zas log.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
