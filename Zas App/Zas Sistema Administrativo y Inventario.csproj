@@ -88,6 +88,9 @@
     <Compile Include="Herramientas.Designer.cs">
       <DependentUpon>Herramientas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\Equipment.cs" />
+    <Compile Include="Inventory\Reagent.cs" />
+    <Compile Include="Inventory\Tools.cs" />
     <Compile Include="ModHerramienta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +147,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\Admin.cs" />
+    <Compile Include="Users\Employee.cs" />
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,5 +232,6 @@
   <ItemGroup>
     <None Include="Resources\Zas log.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
