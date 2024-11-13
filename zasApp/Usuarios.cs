@@ -16,5 +16,15 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMostrarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

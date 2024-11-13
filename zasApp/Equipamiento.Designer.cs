@@ -34,66 +34,72 @@
             this.btnAñadirequipamiento = new System.Windows.Forms.Button();
             this.btnMostrarEquip = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbEquipamiento = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReporteEquipamiento = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grbEquipamiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.btnReporteEquipamiento);
             this.panel1.Controls.Add(this.btnRegresar);
             this.panel1.Controls.Add(this.btnModificarEquip);
             this.panel1.Controls.Add(this.btnAñadirequipamiento);
             this.panel1.Controls.Add(this.btnMostrarEquip);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(-14, -1);
+            this.panel1.Location = new System.Drawing.Point(-10, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 991);
+            this.panel1.Size = new System.Drawing.Size(263, 805);
             this.panel1.TabIndex = 4;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(36, 926);
+            this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Location = new System.Drawing.Point(27, 752);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(103, 30);
+            this.btnRegresar.Size = new System.Drawing.Size(77, 24);
             this.btnRegresar.TabIndex = 11;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
             // 
             // btnModificarEquip
             // 
-            this.btnModificarEquip.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarEquip.Location = new System.Drawing.Point(116, 549);
+            this.btnModificarEquip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarEquip.Location = new System.Drawing.Point(87, 446);
+            this.btnModificarEquip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarEquip.Name = "btnModificarEquip";
-            this.btnModificarEquip.Size = new System.Drawing.Size(145, 55);
+            this.btnModificarEquip.Size = new System.Drawing.Size(109, 45);
             this.btnModificarEquip.TabIndex = 10;
             this.btnModificarEquip.Text = "Modificar Equipamiento";
             this.btnModificarEquip.UseVisualStyleBackColor = true;
             // 
             // btnAñadirequipamiento
             // 
-            this.btnAñadirequipamiento.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadirequipamiento.Location = new System.Drawing.Point(116, 442);
+            this.btnAñadirequipamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirequipamiento.Location = new System.Drawing.Point(87, 359);
+            this.btnAñadirequipamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAñadirequipamiento.Name = "btnAñadirequipamiento";
-            this.btnAñadirequipamiento.Size = new System.Drawing.Size(145, 56);
+            this.btnAñadirequipamiento.Size = new System.Drawing.Size(109, 46);
             this.btnAñadirequipamiento.TabIndex = 9;
             this.btnAñadirequipamiento.Text = "Añadir Nuevo Equipamiento";
             this.btnAñadirequipamiento.UseVisualStyleBackColor = true;
             // 
             // btnMostrarEquip
             // 
-            this.btnMostrarEquip.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarEquip.Location = new System.Drawing.Point(116, 325);
+            this.btnMostrarEquip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarEquip.Location = new System.Drawing.Point(87, 264);
+            this.btnMostrarEquip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMostrarEquip.Name = "btnMostrarEquip";
-            this.btnMostrarEquip.Size = new System.Drawing.Size(145, 56);
+            this.btnMostrarEquip.Size = new System.Drawing.Size(109, 46);
             this.btnMostrarEquip.TabIndex = 8;
             this.btnMostrarEquip.Text = "Mostrar Equipamiento";
             this.btnMostrarEquip.UseVisualStyleBackColor = true;
@@ -102,20 +108,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(116, 236);
+            this.label1.Location = new System.Drawing.Point(87, 192);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 23);
+            this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Equipamiento";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
+            this.pictureBox1.Location = new System.Drawing.Point(90, 52);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // grbEquipamiento
             // 
             this.grbEquipamiento.Controls.Add(this.dataGridView1);
-            this.grbEquipamiento.Location = new System.Drawing.Point(628, 221);
+            this.grbEquipamiento.Location = new System.Drawing.Point(471, 180);
+            this.grbEquipamiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grbEquipamiento.Name = "grbEquipamiento";
-            this.grbEquipamiento.Size = new System.Drawing.Size(883, 557);
+            this.grbEquipamiento.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbEquipamiento.Size = new System.Drawing.Size(662, 453);
             this.grbEquipamiento.TabIndex = 5;
             this.grbEquipamiento.TabStop = false;
             this.grbEquipamiento.Text = "Vizualizacion de equipamiento";
@@ -123,37 +143,41 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 54);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 453);
+            this.dataGridView1.Size = new System.Drawing.Size(600, 368);
             this.dataGridView1.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnReporteEquipamiento
             // 
-            this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(120, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnReporteEquipamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEquipamiento.Location = new System.Drawing.Point(87, 533);
+            this.btnReporteEquipamiento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporteEquipamiento.Name = "btnReporteEquipamiento";
+            this.btnReporteEquipamiento.Size = new System.Drawing.Size(109, 45);
+            this.btnReporteEquipamiento.TabIndex = 12;
+            this.btnReporteEquipamiento.Text = "Generar Reporte";
+            this.btnReporteEquipamiento.UseVisualStyleBackColor = true;
+            this.btnReporteEquipamiento.Click += new System.EventHandler(this.button1_Click);
             // 
             // Equipamiento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1745, 982);
+            this.ClientSize = new System.Drawing.Size(1309, 798);
             this.Controls.Add(this.grbEquipamiento);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Equipamiento";
             this.Text = "Equipamiento";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grbEquipamiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,5 +193,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox grbEquipamiento;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnReporteEquipamiento;
     }
 }
