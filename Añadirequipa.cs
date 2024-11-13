@@ -16,5 +16,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             InitializeComponent();
         }
+
+        private void txtPrecioEquip_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

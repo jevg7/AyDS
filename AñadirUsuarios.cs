@@ -26,5 +26,20 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
 
         }
+
+        private void AñadirUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

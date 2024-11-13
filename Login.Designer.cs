@@ -47,16 +47,16 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(-6, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 838);
+            this.panel1.Size = new System.Drawing.Size(846, 1239);
             this.panel1.TabIndex = 1;
             // 
             // txtiniciosesion
             // 
             this.txtiniciosesion.AutoSize = true;
             this.txtiniciosesion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtiniciosesion.Location = new System.Drawing.Point(888, 179);
+            this.txtiniciosesion.Location = new System.Drawing.Point(1243, 181);
             this.txtiniciosesion.Name = "txtiniciosesion";
             this.txtiniciosesion.Size = new System.Drawing.Size(384, 37);
             this.txtiniciosesion.TabIndex = 2;
@@ -66,17 +66,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(878, 237);
+            this.label1.Location = new System.Drawing.Point(1216, 241);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(428, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bienvenido nuevamente! Ingresa tus datos";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(890, 315);
+            this.label2.Location = new System.Drawing.Point(1245, 328);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 27);
             this.label2.TabIndex = 4;
@@ -86,30 +87,34 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(890, 432);
+            this.label3.Location = new System.Drawing.Point(1245, 428);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 27);
+            this.label3.Size = new System.Drawing.Size(137, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Contraseña";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(895, 356);
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox1.Location = new System.Drawing.Point(1250, 367);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(333, 22);
+            this.textBox1.Size = new System.Drawing.Size(333, 36);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(895, 468);
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.Location = new System.Drawing.Point(1250, 477);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 22);
+            this.textBox2.Size = new System.Drawing.Size(333, 39);
             this.textBox2.TabIndex = 7;
             // 
             // btningresar
             // 
             this.btningresar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btningresar.Location = new System.Drawing.Point(895, 560);
+            this.btningresar.Location = new System.Drawing.Point(1250, 615);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(333, 55);
             this.btningresar.TabIndex = 8;
@@ -129,7 +134,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(1052, 654);
+            this.linkLabel1.Location = new System.Drawing.Point(1448, 699);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(179, 16);
             this.linkLabel1.TabIndex = 10;
@@ -139,19 +144,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(46, 209);
+            this.pictureBox1.Location = new System.Drawing.Point(265, 419);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(303, 326);
+            this.pictureBox1.Size = new System.Drawing.Size(290, 279);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1898, 1023);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(2276, 1227);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btningresar);

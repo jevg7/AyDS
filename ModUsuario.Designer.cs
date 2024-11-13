@@ -40,13 +40,15 @@
             this.btnGuardarHerramienta = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPhoneMod = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(282, 166);
+            this.label1.Location = new System.Drawing.Point(279, 278);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 32);
             this.label1.TabIndex = 71;
@@ -57,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 335);
+            this.label2.Location = new System.Drawing.Point(152, 457);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 25);
             this.label2.TabIndex = 72;
@@ -67,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(149, 725);
+            this.label3.Location = new System.Drawing.Point(152, 784);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 73;
@@ -77,7 +79,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(152, 600);
+            this.label4.Location = new System.Drawing.Point(152, 666);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 25);
             this.label4.TabIndex = 74;
@@ -87,7 +89,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(152, 472);
+            this.label6.Location = new System.Drawing.Point(149, 558);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 25);
             this.label6.TabIndex = 75;
@@ -95,37 +97,42 @@
             // 
             // txtNameMod
             // 
-            this.txtNameMod.Location = new System.Drawing.Point(323, 335);
+            this.txtNameMod.Location = new System.Drawing.Point(323, 457);
+            this.txtNameMod.Multiline = true;
             this.txtNameMod.Name = "txtNameMod";
-            this.txtNameMod.Size = new System.Drawing.Size(323, 22);
+            this.txtNameMod.Size = new System.Drawing.Size(224, 42);
             this.txtNameMod.TabIndex = 76;
             // 
             // txtPassMod
             // 
-            this.txtPassMod.Location = new System.Drawing.Point(323, 476);
+            this.txtPassMod.Location = new System.Drawing.Point(323, 558);
+            this.txtPassMod.Multiline = true;
             this.txtPassMod.Name = "txtPassMod";
-            this.txtPassMod.Size = new System.Drawing.Size(323, 22);
+            this.txtPassMod.Size = new System.Drawing.Size(224, 39);
             this.txtPassMod.TabIndex = 77;
             // 
             // txtUserMod
             // 
-            this.txtUserMod.Location = new System.Drawing.Point(323, 604);
+            this.txtUserMod.Location = new System.Drawing.Point(323, 666);
+            this.txtUserMod.Multiline = true;
             this.txtUserMod.Name = "txtUserMod";
-            this.txtUserMod.Size = new System.Drawing.Size(323, 22);
+            this.txtUserMod.Size = new System.Drawing.Size(224, 41);
             this.txtUserMod.TabIndex = 78;
             // 
             // txtEmailMod
             // 
-            this.txtEmailMod.Location = new System.Drawing.Point(323, 729);
+            this.txtEmailMod.Location = new System.Drawing.Point(323, 784);
+            this.txtEmailMod.Multiline = true;
             this.txtEmailMod.Name = "txtEmailMod";
-            this.txtEmailMod.Size = new System.Drawing.Size(323, 22);
+            this.txtEmailMod.Size = new System.Drawing.Size(224, 42);
             this.txtEmailMod.TabIndex = 79;
             // 
             // btnGuardarHerramienta
             // 
-            this.btnGuardarHerramienta.Location = new System.Drawing.Point(238, 1056);
+            this.btnGuardarHerramienta.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarHerramienta.Location = new System.Drawing.Point(585, 1057);
             this.btnGuardarHerramienta.Name = "btnGuardarHerramienta";
-            this.btnGuardarHerramienta.Size = new System.Drawing.Size(352, 59);
+            this.btnGuardarHerramienta.Size = new System.Drawing.Size(173, 59);
             this.btnGuardarHerramienta.TabIndex = 80;
             this.btnGuardarHerramienta.Text = "Guardar";
             this.btnGuardarHerramienta.UseVisualStyleBackColor = true;
@@ -134,7 +141,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(149, 865);
+            this.label5.Location = new System.Drawing.Point(149, 893);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 25);
             this.label5.TabIndex = 81;
@@ -142,10 +149,21 @@
             // 
             // txtPhoneMod
             // 
-            this.txtPhoneMod.Location = new System.Drawing.Point(323, 868);
+            this.txtPhoneMod.Location = new System.Drawing.Point(323, 896);
+            this.txtPhoneMod.Multiline = true;
             this.txtPhoneMod.Name = "txtPhoneMod";
-            this.txtPhoneMod.Size = new System.Drawing.Size(323, 22);
+            this.txtPhoneMod.Size = new System.Drawing.Size(224, 43);
             this.txtPhoneMod.TabIndex = 82;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
+            this.pictureBox1.Location = new System.Drawing.Point(347, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 88);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 83;
+            this.pictureBox1.TabStop = false;
             // 
             // ModUsuario
             // 
@@ -153,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(800, 1187);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtPhoneMod);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardarHerramienta);
@@ -167,6 +186,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ModUsuario";
             this.Text = "ModUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +206,6 @@
         private System.Windows.Forms.Button btnGuardarHerramienta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPhoneMod;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -21,5 +21,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
 
         }
+
+        private void btnGuardarHerramienta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

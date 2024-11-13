@@ -31,11 +31,11 @@
             this.grbReactivos = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnMostrarreact = new System.Windows.Forms.Button();
-            this.btnAñadirNewReact = new System.Windows.Forms.Button();
-            this.btnModificarReactivo = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnModificarReactivo = new System.Windows.Forms.Button();
+            this.btnAñadirNewReact = new System.Windows.Forms.Button();
+            this.btnMostrarreact = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbReactivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,51 +78,9 @@
             this.panel1.Size = new System.Drawing.Size(328, 1024);
             this.panel1.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(97, 247);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 23);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "REACTIVOS";
-            // 
-            // btnMostrarreact
-            // 
-            this.btnMostrarreact.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarreact.Location = new System.Drawing.Point(80, 326);
-            this.btnMostrarreact.Name = "btnMostrarreact";
-            this.btnMostrarreact.Size = new System.Drawing.Size(145, 56);
-            this.btnMostrarreact.TabIndex = 8;
-            this.btnMostrarreact.Text = "Mostrar Reactivos";
-            this.btnMostrarreact.UseVisualStyleBackColor = true;
-            // 
-            // btnAñadirNewReact
-            // 
-            this.btnAñadirNewReact.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadirNewReact.Location = new System.Drawing.Point(83, 426);
-            this.btnAñadirNewReact.Name = "btnAñadirNewReact";
-            this.btnAñadirNewReact.Size = new System.Drawing.Size(145, 56);
-            this.btnAñadirNewReact.TabIndex = 9;
-            this.btnAñadirNewReact.Text = "Añadir Nuevo Reactivo";
-            this.btnAñadirNewReact.UseVisualStyleBackColor = true;
-            // 
-            // btnModificarReactivo
-            // 
-            this.btnModificarReactivo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarReactivo.Location = new System.Drawing.Point(83, 535);
-            this.btnModificarReactivo.Name = "btnModificarReactivo";
-            this.btnModificarReactivo.Size = new System.Drawing.Size(145, 55);
-            this.btnModificarReactivo.TabIndex = 10;
-            this.btnModificarReactivo.Text = "Modificar Reactivo";
-            this.btnModificarReactivo.UseVisualStyleBackColor = true;
-            // 
             // btnRegresar
             // 
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Location = new System.Drawing.Point(25, 982);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(103, 30);
@@ -130,10 +88,52 @@
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
             // 
+            // btnModificarReactivo
+            // 
+            this.btnModificarReactivo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarReactivo.Location = new System.Drawing.Point(83, 613);
+            this.btnModificarReactivo.Name = "btnModificarReactivo";
+            this.btnModificarReactivo.Size = new System.Drawing.Size(145, 55);
+            this.btnModificarReactivo.TabIndex = 10;
+            this.btnModificarReactivo.Text = "Modificar Reactivo";
+            this.btnModificarReactivo.UseVisualStyleBackColor = true;
+            // 
+            // btnAñadirNewReact
+            // 
+            this.btnAñadirNewReact.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirNewReact.Location = new System.Drawing.Point(83, 479);
+            this.btnAñadirNewReact.Name = "btnAñadirNewReact";
+            this.btnAñadirNewReact.Size = new System.Drawing.Size(145, 56);
+            this.btnAñadirNewReact.TabIndex = 9;
+            this.btnAñadirNewReact.Text = "Añadir Nuevo Reactivo";
+            this.btnAñadirNewReact.UseVisualStyleBackColor = true;
+            // 
+            // btnMostrarreact
+            // 
+            this.btnMostrarreact.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarreact.Location = new System.Drawing.Point(83, 362);
+            this.btnMostrarreact.Name = "btnMostrarreact";
+            this.btnMostrarreact.Size = new System.Drawing.Size(145, 56);
+            this.btnMostrarreact.TabIndex = 8;
+            this.btnMostrarreact.Text = "Mostrar Reactivos";
+            this.btnMostrarreact.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(96, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "REACTIVOS";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 79);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(115, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

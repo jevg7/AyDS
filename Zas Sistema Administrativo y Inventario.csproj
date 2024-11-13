@@ -227,5 +227,20 @@
   <ItemGroup>
     <None Include="Resources\Zas log.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-plus-and-minus-signs-symbol-cross-shaped-miscellaneous-cross-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7046041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

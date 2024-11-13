@@ -21,5 +21,20 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
 
         }
+
+        private void txtIDreactivo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFormula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

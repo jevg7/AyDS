@@ -121,10 +121,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MoeumT R", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(297, 407);
+            this.label1.Font = new System.Drawing.Font("MoeumT R", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(340, 407);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(494, 98);
+            this.label1.Size = new System.Drawing.Size(876, 178);
             this.label1.TabIndex = 1;
             this.label1.Text = "¡Zas! Medical\r\nSistema Administrativo\r\n";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -132,9 +132,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 92);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 108);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
