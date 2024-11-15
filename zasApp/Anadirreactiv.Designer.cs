@@ -1,6 +1,6 @@
 ﻿namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    partial class Añadirreactiv
+    partial class Anadirreactiv
     {
         /// <summary>
         /// Required designer variable.
@@ -48,9 +48,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 166);
+            this.label1.Location = new System.Drawing.Point(210, 135);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 32);
+            this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Añadir Reactivo";
             // 
@@ -58,9 +59,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(118, 272);
+            this.label2.Location = new System.Drawing.Point(88, 221);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 25);
+            this.label2.Size = new System.Drawing.Size(28, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "ID";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -69,9 +71,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(99, 777);
+            this.label3.Location = new System.Drawing.Point(74, 631);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Precio";
             // 
@@ -79,9 +82,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(99, 651);
+            this.label4.Location = new System.Drawing.Point(74, 529);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Stock";
             // 
@@ -89,9 +93,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(99, 525);
+            this.label5.Location = new System.Drawing.Point(74, 427);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 25);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Fórmula";
             // 
@@ -99,60 +104,67 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(99, 396);
+            this.label6.Location = new System.Drawing.Point(74, 322);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 25);
+            this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Nombre";
             // 
             // txtIDreactivo
             // 
-            this.txtIDreactivo.Location = new System.Drawing.Point(258, 272);
+            this.txtIDreactivo.Location = new System.Drawing.Point(194, 221);
+            this.txtIDreactivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIDreactivo.Multiline = true;
             this.txtIDreactivo.Name = "txtIDreactivo";
-            this.txtIDreactivo.Size = new System.Drawing.Size(235, 42);
+            this.txtIDreactivo.Size = new System.Drawing.Size(177, 35);
             this.txtIDreactivo.TabIndex = 6;
             this.txtIDreactivo.TextChanged += new System.EventHandler(this.txtIDreactivo_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(258, 396);
+            this.txtNombre.Location = new System.Drawing.Point(194, 322);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(235, 43);
+            this.txtNombre.Size = new System.Drawing.Size(177, 36);
             this.txtNombre.TabIndex = 7;
             // 
             // txtFormula
             // 
-            this.txtFormula.Location = new System.Drawing.Point(258, 525);
+            this.txtFormula.Location = new System.Drawing.Point(194, 427);
+            this.txtFormula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFormula.Multiline = true;
             this.txtFormula.Name = "txtFormula";
-            this.txtFormula.Size = new System.Drawing.Size(235, 43);
+            this.txtFormula.Size = new System.Drawing.Size(177, 36);
             this.txtFormula.TabIndex = 8;
             this.txtFormula.TextChanged += new System.EventHandler(this.txtFormula_TextChanged);
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(258, 655);
+            this.txtStock.Location = new System.Drawing.Point(194, 532);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStock.Multiline = true;
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(235, 41);
+            this.txtStock.Size = new System.Drawing.Size(177, 34);
             this.txtStock.TabIndex = 9;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(258, 780);
+            this.txtPrecio.Location = new System.Drawing.Point(194, 634);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecio.Multiline = true;
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(235, 43);
+            this.txtPrecio.Size = new System.Drawing.Size(177, 36);
             this.txtPrecio.TabIndex = 10;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(598, 914);
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(448, 743);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(174, 59);
+            this.btnGuardar.Size = new System.Drawing.Size(130, 48);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -161,19 +173,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(352, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(264, 44);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(63, 61);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // Añadirreactiv
+            // Anadirreactiv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(800, 1007);
+            this.ClientSize = new System.Drawing.Size(600, 818);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtPrecio);
@@ -187,8 +200,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Añadirreactiv";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Anadirreactiv";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Anadirreactiv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

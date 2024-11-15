@@ -11,64 +11,19 @@ using System.Windows.Forms;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    public partial class Modreactiv : Form
+    public partial class Anadirreactiv : Form
     {
-        public Modreactiv()
+        public Anadirreactiv()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrecio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtStock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFormula_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
         private void txtIDreactivo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -96,27 +51,25 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     string[] lineas = File.ReadAllLines("reactivos.txt");
                     miLectura.Close();
                     bool encontrado = false;
-                    int i = 0;
-                    for (i = 0; i<lineas.Length; i++)
+                    foreach (string linea in lineas)
                     {
-                        string[] datos = lineas[i].Split(',');
+                        string[] datos = linea.Split(',');
                         if (Convert.ToInt32(datos[0]) == idReactivo)
                         {
                             encontrado = true;
-                            lineas[i] = idReactivo + "," + nombreReactivo + "," + formulaReactivo + "," + stockReactivo + "," + priceReactivo;
                             break;
                         }
                     }
                     if (encontrado)
                     {
-
-                        
-                        File.WriteAllLines("reactivos.txt", lineas);
-                        this.Close();
+                        MessageBox.Show("Este ID ya esta ocupado");
                     }
                     else
                     {
-                        MessageBox.Show("No se encontro un reactivo con este ID");
+                        StreamWriter miEscritura = new StreamWriter("reactivos.txt",append : true);
+                        miEscritura.WriteLine(idReactivo + "," + nombreReactivo + "," + formulaReactivo + "," + stockReactivo + "," + priceReactivo);
+                        miEscritura.Close();
+                        this.Close();
                     }
 
                 }
@@ -137,13 +90,18 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 }
             }
-            else
+            else 
             {
                 MessageBox.Show("No puede dejar ningun campo vacio");
             }
         }
 
-        private void Modreactiv_Load(object sender, EventArgs e)
+        private void txtFormula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Anadirreactiv_Load(object sender, EventArgs e)
         {
 
         }

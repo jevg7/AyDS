@@ -64,11 +64,11 @@
     <Compile Include="AñadirOrden.Designer.cs">
       <DependentUpon>AñadirOrden.cs</DependentUpon>
     </Compile>
-    <Compile Include="Añadirreactiv.cs">
+    <Compile Include="Anadirreactiv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Añadirreactiv.Designer.cs">
-      <DependentUpon>Añadirreactiv.cs</DependentUpon>
+    <Compile Include="Anadirreactiv.Designer.cs">
+      <DependentUpon>Anadirreactiv.cs</DependentUpon>
     </Compile>
     <Compile Include="AñadirUsuarios.cs">
       <SubType>Form</SubType>
@@ -88,6 +88,16 @@
     <Compile Include="Herramientas.Designer.cs">
       <DependentUpon>Herramientas.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Equipamiento.cs" />
+    <Compile Include="Inventario\Herramientas.cs" />
+    <Compile Include="Inventario\Ordenes.cs" />
+    <Compile Include="Inventario\Reactivos.cs" />
     <Compile Include="ModHerramienta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +122,11 @@
     <Compile Include="Modreactiv.Designer.cs">
       <DependentUpon>Modreactiv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Loginp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Loginp.Designer.cs">
+      <DependentUpon>Loginp.cs</DependentUpon>
     </Compile>
     <Compile Include="ModUsuario.cs">
       <SubType>Form</SubType>
@@ -136,6 +146,7 @@
     <Compile Include="Pantallaprinci.Designer.cs">
       <DependentUpon>Pantallaprinci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedores\Proveedores.cs" />
     <Compile Include="Reactivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +155,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios.cs">
+    <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <Compile Include="Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Admin.cs" />
+    <Compile Include="Users\Trabajador.cs" />
     <EmbeddedResource Include="Añadirequipa.resx">
       <DependentUpon>Añadirequipa.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +172,8 @@
     <EmbeddedResource Include="AñadirOrden.resx">
       <DependentUpon>AñadirOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Añadirreactiv.resx">
-      <DependentUpon>Añadirreactiv.cs</DependentUpon>
+    <EmbeddedResource Include="Anadirreactiv.resx">
+      <DependentUpon>Anadirreactiv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AñadirUsuarios.resx">
       <DependentUpon>AñadirUsuarios.cs</DependentUpon>
@@ -170,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Herramientas.resx">
       <DependentUpon>Herramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModHerramienta.resx">
       <DependentUpon>ModHerramienta.cs</DependentUpon>
@@ -183,8 +199,8 @@
     <EmbeddedResource Include="Modreactiv.resx">
       <DependentUpon>Modreactiv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Loginp.resx">
+      <DependentUpon>Loginp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModUsuario.resx">
       <DependentUpon>ModUsuario.cs</DependentUpon>
@@ -208,8 +224,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

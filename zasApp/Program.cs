@@ -16,7 +16,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loginform());
+            Application.Run(new InicioSesion());
         }
     }
 }

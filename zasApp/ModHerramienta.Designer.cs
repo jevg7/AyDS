@@ -44,10 +44,11 @@
             // 
             // btnGuardarHerramienta
             // 
-            this.btnGuardarHerramienta.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarHerramienta.Location = new System.Drawing.Point(612, 1012);
+            this.btnGuardarHerramienta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarHerramienta.Location = new System.Drawing.Point(459, 822);
+            this.btnGuardarHerramienta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarHerramienta.Name = "btnGuardarHerramienta";
-            this.btnGuardarHerramienta.Size = new System.Drawing.Size(158, 59);
+            this.btnGuardarHerramienta.Size = new System.Drawing.Size(118, 48);
             this.btnGuardarHerramienta.TabIndex = 43;
             this.btnGuardarHerramienta.Text = "Guardar";
             this.btnGuardarHerramienta.UseVisualStyleBackColor = true;
@@ -55,43 +56,48 @@
             // 
             // txtPrecioHerramienta
             // 
-            this.txtPrecioHerramienta.Location = new System.Drawing.Point(318, 801);
+            this.txtPrecioHerramienta.Location = new System.Drawing.Point(238, 651);
+            this.txtPrecioHerramienta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrecioHerramienta.Multiline = true;
             this.txtPrecioHerramienta.Name = "txtPrecioHerramienta";
-            this.txtPrecioHerramienta.Size = new System.Drawing.Size(224, 39);
+            this.txtPrecioHerramienta.Size = new System.Drawing.Size(169, 32);
             this.txtPrecioHerramienta.TabIndex = 42;
             // 
             // txtStockHerramienta
             // 
-            this.txtStockHerramienta.Location = new System.Drawing.Point(318, 659);
+            this.txtStockHerramienta.Location = new System.Drawing.Point(238, 535);
+            this.txtStockHerramienta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtStockHerramienta.Multiline = true;
             this.txtStockHerramienta.Name = "txtStockHerramienta";
-            this.txtStockHerramienta.Size = new System.Drawing.Size(224, 38);
+            this.txtStockHerramienta.Size = new System.Drawing.Size(169, 32);
             this.txtStockHerramienta.TabIndex = 41;
             // 
             // txtNombreHerramient
             // 
-            this.txtNombreHerramient.Location = new System.Drawing.Point(318, 519);
+            this.txtNombreHerramient.Location = new System.Drawing.Point(238, 422);
+            this.txtNombreHerramient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreHerramient.Multiline = true;
             this.txtNombreHerramient.Name = "txtNombreHerramient";
-            this.txtNombreHerramient.Size = new System.Drawing.Size(224, 38);
+            this.txtNombreHerramient.Size = new System.Drawing.Size(169, 32);
             this.txtNombreHerramient.TabIndex = 40;
             // 
             // txtIDHerramienta
             // 
-            this.txtIDHerramienta.Location = new System.Drawing.Point(318, 387);
+            this.txtIDHerramienta.Location = new System.Drawing.Point(238, 314);
+            this.txtIDHerramienta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIDHerramienta.Multiline = true;
             this.txtIDHerramienta.Name = "txtIDHerramienta";
-            this.txtIDHerramienta.Size = new System.Drawing.Size(224, 37);
+            this.txtIDHerramienta.Size = new System.Drawing.Size(169, 31);
             this.txtIDHerramienta.TabIndex = 39;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(159, 519);
+            this.label6.Location = new System.Drawing.Point(119, 422);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 25);
+            this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 38;
             this.label6.Text = "Nombre";
             // 
@@ -99,9 +105,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(159, 659);
+            this.label4.Location = new System.Drawing.Point(119, 535);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 37;
             this.label4.Text = "Stock";
             // 
@@ -109,9 +116,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 797);
+            this.label3.Location = new System.Drawing.Point(119, 648);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 25);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 36;
             this.label3.Text = "Precio";
             // 
@@ -119,9 +127,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(159, 387);
+            this.label2.Location = new System.Drawing.Point(119, 314);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 25);
+            this.label2.Size = new System.Drawing.Size(28, 20);
             this.label2.TabIndex = 35;
             this.label2.Text = "ID";
             // 
@@ -129,9 +138,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 237);
+            this.label1.Location = new System.Drawing.Point(187, 193);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 32);
+            this.label1.Size = new System.Drawing.Size(247, 26);
             this.label1.TabIndex = 34;
             this.label1.Text = "Modificar Herramienta";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -139,19 +149,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
-            this.pictureBox1.Location = new System.Drawing.Point(336, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(252, 72);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 74);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
             // ModHerramienta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(800, 1130);
+            this.ClientSize = new System.Drawing.Size(600, 862);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGuardarHerramienta);
             this.Controls.Add(this.txtPrecioHerramienta);
@@ -163,8 +174,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModHerramienta";
             this.Text = "ModHerramienta";
+            this.Load += new System.EventHandler(this.ModHerramienta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

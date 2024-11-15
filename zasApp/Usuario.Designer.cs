@@ -1,6 +1,6 @@
 ﻿namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    partial class Usuarios
+    partial class Usuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnModificarEquip = new System.Windows.Forms.Button();
             this.btnAñadirUsuario = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbUsuarios = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grbUsuarios.SuspendLayout();
@@ -60,13 +60,25 @@
             this.panel1.Size = new System.Drawing.Size(272, 833);
             this.panel1.TabIndex = 5;
             // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(82, 539);
+            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(109, 45);
+            this.btnEliminarUsuario.TabIndex = 12;
+            this.btnEliminarUsuario.Text = "Eliminar Usuario";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnRegresar
             // 
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.Location = new System.Drawing.Point(23, 766);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(77, 24);
+            this.btnRegresar.Size = new System.Drawing.Size(87, 24);
             this.btnRegresar.TabIndex = 11;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -75,7 +87,7 @@
             // 
             this.btnModificarEquip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarEquip.Location = new System.Drawing.Point(82, 451);
-            this.btnModificarEquip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarEquip.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarEquip.Name = "btnModificarEquip";
             this.btnModificarEquip.Size = new System.Drawing.Size(109, 45);
             this.btnModificarEquip.TabIndex = 10;
@@ -86,7 +98,7 @@
             // 
             this.btnAñadirUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadirUsuario.Location = new System.Drawing.Point(82, 356);
-            this.btnAñadirUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadirUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadirUsuario.Name = "btnAñadirUsuario";
             this.btnAñadirUsuario.Size = new System.Drawing.Size(109, 46);
             this.btnAñadirUsuario.TabIndex = 9;
@@ -97,7 +109,7 @@
             // 
             this.btnMostrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarUsuario.Location = new System.Drawing.Point(82, 270);
-            this.btnMostrarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMostrarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrarUsuario.Name = "btnMostrarUsuario";
             this.btnMostrarUsuario.Size = new System.Drawing.Size(109, 46);
             this.btnMostrarUsuario.TabIndex = 8;
@@ -122,7 +134,7 @@
             // 
             this.pictureBox1.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.Zas_log;
             this.pictureBox1.Location = new System.Drawing.Point(92, 49);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,9 +145,9 @@
             // 
             this.grbUsuarios.Controls.Add(this.dataGridView1);
             this.grbUsuarios.Location = new System.Drawing.Point(418, 204);
-            this.grbUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.grbUsuarios.Name = "grbUsuarios";
-            this.grbUsuarios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbUsuarios.Padding = new System.Windows.Forms.Padding(2);
             this.grbUsuarios.Size = new System.Drawing.Size(662, 453);
             this.grbUsuarios.TabIndex = 7;
             this.grbUsuarios.TabStop = false;
@@ -145,35 +157,24 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(37, 50);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(600, 368);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btnEliminarUsuario
-            // 
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(82, 539);
-            this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(109, 45);
-            this.btnEliminarUsuario.TabIndex = 12;
-            this.btnEliminarUsuario.Text = "Eliminar Usuario";
-            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
-            this.btnEliminarUsuario.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Usuarios
+            // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1196, 826);
             this.Controls.Add(this.grbUsuarios);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Usuarios";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Usuario";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Usuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

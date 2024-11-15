@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    public partial class Usuarios : Form
+    public partial class Usuario : Form
     {
-        public Usuarios()
+        public Usuario()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         }
 
         private void btnMostrarUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usuario_Load(object sender, EventArgs e)
         {
 
         }
