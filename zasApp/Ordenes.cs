@@ -63,5 +63,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             ModOrden frm = new ModOrden();
             frm.ShowDialog();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
