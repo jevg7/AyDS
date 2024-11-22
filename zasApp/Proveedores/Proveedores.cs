@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zas_Sistema_Administrativo_y_Inventario.Proveedores
 {
-    public class Proveedores
+    public class Proveedor
     {
         public int ID { get; set; }
         public string Name { get; set; }

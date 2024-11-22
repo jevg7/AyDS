@@ -95,6 +95,51 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void ModHerramienta_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecioHerramienta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStockHerramienta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreHerramient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDHerramienta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

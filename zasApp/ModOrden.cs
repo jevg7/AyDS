@@ -16,5 +16,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             InitializeComponent();
         }
+
+        private void ModOrden_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

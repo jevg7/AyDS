@@ -122,12 +122,6 @@
     <Compile Include="Modreactiv.Designer.cs">
       <DependentUpon>Modreactiv.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loginp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Loginp.Designer.cs">
-      <DependentUpon>Loginp.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modreactiv.resx">
       <DependentUpon>Modreactiv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Loginp.resx">
-      <DependentUpon>Loginp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModUsuario.resx">
       <DependentUpon>ModUsuario.cs</DependentUpon>

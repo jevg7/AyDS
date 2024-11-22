@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zas_Sistema_Administrativo_y_Inventario.Inventario
 {
-    public class Reactivos
+    public class Reactivo
     {
         public int ID { get; set; }
         public string Name { get; set; }

@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zas_Sistema_Administrativo_y_Inventario.Inventario;
+
+
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
@@ -20,28 +23,26 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void AñadirOrden_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        private void btnGuardarHerramienta_Click(object sender, EventArgs e)
+        private void btnGuardarOrden_Click(object sender, EventArgs e)
         {
             if (txtIDOrden.Text != "" &&  txtCantOrden.Text != "" && txtProdOrden.Text != "" && txtProveeOrden.Text != "")
             {
-                int idOrden = 0;
-                string dateOrden = "";
-                int cantOrden = 0;
-                string prodOrden = "";
-                string provOrden = "";
+
+                Orden orden = new Orden();
 
                 if (File.Exists("orden.txt"))
                 {
                     StreamReader miLectura = new StreamReader("orden.txt");
 
-                    idOrden = Convert.ToInt32(txtIDOrden.Text);
-                    dateOrden = dtpOrden.ToString();
-                    cantOrden = Convert.ToInt32(txtCantOrden.Text);
-                    prodOrden = txtProdOrden.Text;
-                    provOrden = txtProveeOrden.Text;
+                    orden.ID = Convert.ToInt32(txtIDOrden.Text);
+                    orden.Date = Convert.ToDateTime(dtpOrden.Text);
+                    orden.Quantity = Convert.ToInt32(txtCantOrden.Text);
+                    orden.Product = txtProdOrden.Text;
+                    orden.Provider = txtProveeOrden.Text;
+
 
                     string[] lineas = File.ReadAllLines("orden.txt");
                     miLectura.Close();
@@ -49,7 +50,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
-                        if (Convert.ToInt32(datos[0]) == idOrden)
+                        if (Convert.ToInt32(datos[0]) == orden.ID)
                         {
                             encontrado = true;
                             break;
@@ -62,7 +63,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     else
                     {
                         StreamWriter miEscritura = new StreamWriter("orden.txt", append: true);
-                        miEscritura.WriteLine(idOrden + "," + dateOrden + ","  + cantOrden + "," + prodOrden + "," + provOrden);
+                        miEscritura.WriteLine(orden.ID + "," + orden.Date + ","  + orden.Quantity + "," + orden.Product + "," + orden.Provider);
                         miEscritura.Close();
                         this.Close();
                     }
@@ -74,11 +75,12 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     StreamWriter miEscritura = File.CreateText("orden.txt");
 
 
-                    idOrden = Convert.ToInt32(txtIDOrden.Text);
-                    cantOrden = Convert.ToInt32(txtCantOrden.Text);
-                    prodOrden = txtProdOrden.Text;
-                    provOrden = txtProveeOrden.Text;
-                    miEscritura.WriteLine(idOrden + "," + dateOrden + "," + cantOrden + "," + prodOrden + "," + provOrden);
+                    orden.ID = Convert.ToInt32(txtIDOrden.Text);
+                    orden.Date = Convert.ToDateTime(dtpOrden.Text);
+                    orden.Quantity = Convert.ToInt32(txtCantOrden.Text);
+                    orden.Product = txtProdOrden.Text;
+                    orden.Provider = txtProveeOrden.Text;
+                    miEscritura.WriteLine(orden.ID + "," + orden.Date + "," + orden.Quantity + "," + orden.Product + "," + orden.Provider);
                     miEscritura.Close();
                     this.Close();
 
@@ -88,6 +90,11 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             {
                 MessageBox.Show("No puede dejar ningun campo vacio");
             }
+        }
+
+        private void dtpOrden_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

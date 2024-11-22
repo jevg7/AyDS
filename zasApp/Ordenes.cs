@@ -68,5 +68,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             this.Close();
         }
+
+        private void Ordenes_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

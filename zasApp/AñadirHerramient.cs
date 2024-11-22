@@ -20,7 +20,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void AñadirHerramient_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnGuardarHerramienta_Click(object sender, EventArgs e)

@@ -75,5 +75,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             txtContraLogin.PasswordChar = '*';
         }
+
+        private void InicioSesion_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

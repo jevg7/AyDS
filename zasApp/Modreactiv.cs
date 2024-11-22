@@ -145,7 +145,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void Modreactiv_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -17,9 +17,9 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Pantallaprinci_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -37,7 +37,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void Herramientas_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnMostrarHerra_Click(object sender, EventArgs e)
