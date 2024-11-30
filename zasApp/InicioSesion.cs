@@ -16,6 +16,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         public InicioSesion()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     if (datos[0] == user && datos[1] == password)
                     {
                         encontrado = true;
+                        session.usuario = datos[0];
+                        session.rol = datos[2];
                         break;
                     }
                 }
@@ -63,11 +66,14 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             if (mostrarContra.Checked)
             {
-                txtContraLogin.PasswordChar = '\0'; 
+                txtContraLogin.PasswordChar = '\0';
+                hidden.Image = Properties.Resources.hidden;
             }
             else
             {
                 txtContraLogin.PasswordChar = '*';
+                
+                hidden.Image = Properties.Resources.eye;
             }
         }
 
@@ -78,7 +84,17 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void InicioSesion_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void hidden_Click(object sender, EventArgs e)
+        {
+            mostrarContra.Checked = !mostrarContra.Checked;
+        }
+
+        private void InicioSesion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

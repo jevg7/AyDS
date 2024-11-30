@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Zas_Sistema_Administrativo_y_Inventario.Inventario
 {
-    public class Equipamiento
+    public class Equipo
+
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Stock { get; set; }
+        public int Stock { get; set; }
         public decimal Price { get; set; }
     }
 }
