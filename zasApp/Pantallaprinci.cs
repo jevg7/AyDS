@@ -92,7 +92,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             /*Ordenes frm = new Ordenes();
             frm.ShowDialog();*/
             actButton(sender, Colores.color1);
-            //Abrir_Form(new Reactivos());
+            Abrir_Form(new vOrden());
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)

@@ -170,7 +170,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     else
                     {
                         StreamWriter miEscritura = new StreamWriter("equipamiento.txt", append: true);
-                        miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price);
+                        miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
                         miEscritura.Close();
                         idMax = idMax + 1;
                         txtID.Text = idMax.ToString();
@@ -189,7 +189,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     equipo.Name = txtNombre.Text;
                     equipo.Stock = Convert.ToInt32(txtStock.Text);
                     equipo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price);
+                    miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
                     miEscritura.Close();
                     idMax = idMax + 1;
                     txtID.Text = idMax.ToString();
@@ -252,7 +252,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         if (Convert.ToInt32(datos[0]) == equipo.ID)
                         {
                             encontrado = true;
-                            lineas[i] = equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price;
+                            lineas[i] = equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2";
                             break;
                         }
                     }
@@ -281,7 +281,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     equipo.Name = txtNombre.Text;
                     equipo.Stock = Convert.ToInt32(txtStock.Text);
                     equipo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price);
+                    miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
                     miEscritura.Close();
 
                     MessageBox.Show("Equipamiento actualizado correctamente");

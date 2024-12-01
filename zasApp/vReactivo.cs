@@ -146,7 +146,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     else
                     {
                         StreamWriter miEscritura = new StreamWriter("reactivos.txt", append: true);
-                        miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price);
+                        miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
                         miEscritura.Close();
                         idMax = idMax + 1;
                         txtIDreactivo.Text = idMax.ToString();
@@ -167,7 +167,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     reactivo.Formula = txtFormula.Text;
                     reactivo.Stock = Convert.ToInt32(txtStock.Text);
                     reactivo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price);
+                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
                     miEscritura.Close();
                     idMax = idMax + 1;
                     txtIDreactivo.Text = idMax.ToString();
@@ -280,7 +280,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         if (Convert.ToInt32(datos[0]) == reactivo.ID)
                         {
                             encontrado = true;
-                            lineas[i] = reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price;
+                            lineas[i] = reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1";
                             break;
                         }
                     }
@@ -310,7 +310,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     reactivo.Formula = txtFormula.Text;
                     reactivo.Stock = Convert.ToInt32(txtStock.Text);
                     reactivo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price);
+                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
                     miEscritura.Close();
 
                     MessageBox.Show("Reactivo actualizado correctamente");

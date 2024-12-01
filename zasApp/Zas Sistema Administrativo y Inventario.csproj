@@ -61,12 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AñadirOrden.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AñadirOrden.Designer.cs">
-      <DependentUpon>AñadirOrden.cs</DependentUpon>
-    </Compile>
     <Compile Include="AñadirUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,23 +77,11 @@
     <Compile Include="Inventario\Herramientas.cs" />
     <Compile Include="Inventario\Ordenes.cs" />
     <Compile Include="Inventario\Reactivos.cs" />
-    <Compile Include="ModOrden.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModOrden.Designer.cs">
-      <DependentUpon>ModOrden.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModUsuario.Designer.cs">
       <DependentUpon>ModUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ordenes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ordenes.Designer.cs">
-      <DependentUpon>Ordenes.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallaprinci.cs">
       <SubType>Form</SubType>
@@ -107,7 +89,6 @@
     <Compile Include="Pantallaprinci.Designer.cs">
       <DependentUpon>Pantallaprinci.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedores\Proveedores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="session.cs" />
@@ -143,23 +124,14 @@
     <Compile Include="vReactivo.Designer.cs">
       <DependentUpon>vReactivo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AñadirOrden.resx">
-      <DependentUpon>AñadirOrden.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AñadirUsuarios.resx">
       <DependentUpon>AñadirUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModOrden.resx">
-      <DependentUpon>ModOrden.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModUsuario.resx">
       <DependentUpon>ModUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ordenes.resx">
-      <DependentUpon>Ordenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallaprinci.resx">
       <DependentUpon>Pantallaprinci.cs</DependentUpon>
@@ -243,6 +215,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista-de-la-compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

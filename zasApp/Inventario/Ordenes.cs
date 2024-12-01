@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zas_Sistema_Administrativo_y_Inventario.Inventario
 {
-    public class Orden
+    public class Ordn
     {
         public int ID { get; set; }
 
@@ -14,6 +14,6 @@ namespace Zas_Sistema_Administrativo_y_Inventario.Inventario
       
         public int Quantity { get; set; }
         public string Product { get; set; }
-        public string Provider { get; set; }
+        public decimal Price { get; set; }
     }
 }

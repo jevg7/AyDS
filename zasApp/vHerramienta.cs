@@ -170,7 +170,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     else
                     {
                         StreamWriter miEscritura = new StreamWriter("herramienta.txt", append: true);
-                        miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price);
+                        miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price + "3");
                         miEscritura.Close();
                         idMax = idMax + 1;
                         txtID.Text = idMax.ToString();
@@ -189,7 +189,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     herra.Name = txtNombre.Text;
                     herra.Stock = Convert.ToInt32(txtStock.Text);
                     herra.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price);
+                    miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price + "3");
                     miEscritura.Close();
                     idMax = idMax + 1;
                     txtID.Text = idMax.ToString();
@@ -252,7 +252,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         if (Convert.ToInt32(datos[0]) == herra.ID)
                         {
                             encontrado = true;
-                            lineas[i] = herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price;
+                            lineas[i] = herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price + "3";
                             break;
                         }
                     }
@@ -281,7 +281,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     herra.Name = txtNombre.Text;
                     herra.Stock = Convert.ToInt32(txtStock.Text);
                     herra.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price);
+                    miEscritura.WriteLine(herra.ID + "," + herra.Name + "," + herra.Stock + "," + herra.Price + "3");
                     miEscritura.Close();
 
                     MessageBox.Show("Herramienta actualizada correctamente");
@@ -396,6 +396,9 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
-        
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
