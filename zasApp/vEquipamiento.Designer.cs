@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipamiento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEquipamiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEquipamiento.Location = new System.Drawing.Point(20, 203);
-            this.dgvEquipamiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvEquipamiento.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEquipamiento.Name = "dgvEquipamiento";
             this.dgvEquipamiento.RowHeadersWidth = 51;
             this.dgvEquipamiento.Size = new System.Drawing.Size(1125, 390);
@@ -61,8 +62,8 @@
             // 
             this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Location = new System.Drawing.Point(1020, 142);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(1026, 85);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 34);
             this.btnCancelar.TabIndex = 39;
@@ -75,8 +76,8 @@
             this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.Enabled = false;
-            this.btnGuardar.Location = new System.Drawing.Point(887, 142);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(893, 85);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(125, 34);
             this.btnGuardar.TabIndex = 38;
@@ -88,8 +89,8 @@
             // 
             this.btnAgrgr.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnAgrgr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgrgr.Location = new System.Drawing.Point(773, 142);
-            this.btnAgrgr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgrgr.Location = new System.Drawing.Point(779, 85);
+            this.btnAgrgr.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgrgr.Name = "btnAgrgr";
             this.btnAgrgr.Size = new System.Drawing.Size(105, 34);
             this.btnAgrgr.TabIndex = 37;
@@ -168,9 +169,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(31, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 25);
+            this.label2.Size = new System.Drawing.Size(33, 25);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "ID";
             // 
             // label5
             // 
@@ -193,12 +194,26 @@
             this.txtStock.Size = new System.Drawing.Size(235, 36);
             this.txtStock.TabIndex = 33;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.Location = new System.Drawing.Point(893, 142);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(125, 34);
+            this.btnReporte.TabIndex = 41;
+            this.btnReporte.Text = "Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // vEquipamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1161, 607);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.dgvEquipamiento);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -213,7 +228,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "vEquipamiento";
             this.Text = "vEquipamiento";
             this.Load += new System.EventHandler(this.vEquipamiento_Load);
@@ -238,5 +253,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

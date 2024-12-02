@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    public partial class reporteReactivos : Form
+    public partial class reporteHerramientas : Form
     {
-        public reporteReactivos()
+        public reporteHerramientas()
         {
             InitializeComponent();
         }
 
-        private void reporteReactivos_Load(object sender, EventArgs e)
+        private void reporteHerramientas_Load(object sender, EventArgs e)
         {
 
-            this.RvReactivos.RefreshReport();
-        }
-
-        private void RvReactivos_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
+            this.reportViewer1.RefreshReport();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
     public partial class vHerramienta : Form
     {
         private int idMax = 0;  
+        private List<Herramienta> listaHerramienta =new List<Herramienta>();
         public vHerramienta()
         {
             InitializeComponent();
@@ -177,6 +179,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         MessageBox.Show("Herramienta agregada correctamente");
                         Limpiar();
                         mostrarDtgvHerramienta();
+                        CargarLista();
                     }
 
                 }
@@ -196,6 +199,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Herramienta agregado correctamente");
                     Limpiar();
                     mostrarDtgvHerramienta();
+                    CargarLista();
 
 
                 }
@@ -264,6 +268,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         MessageBox.Show("Herramienta actualizada correctamente");
                         Limpiar();
                         mostrarDtgvHerramienta();
+                        CargarLista();
                     }
                     else
                     {
@@ -287,6 +292,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Herramienta actualizada correctamente");
                     Limpiar();
                     mostrarDtgvHerramienta();
+                    CargarLista();
 
 
                 }
@@ -359,6 +365,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Herramienta actualizada correctamente");
                     Limpiar();
                     mostrarDtgvHerramienta();
+
                 }
                 else
                 {
@@ -369,6 +376,32 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+
+        private void CargarLista()
+        {
+            if (File.Exists("herrmaienta.txt"))
+            {
+                string[] lineas = File.ReadAllLines("herramienta.txt");
+                listaHerramienta.Clear(); // Limpiar la lista para evitar duplicados
+
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+                    if (datos.Length >= 4) // Validar que la línea contenga los campos necesarios
+                    {
+                        Herramienta herramienta = new Herramienta
+                        {
+                            ID = Convert.ToInt32(datos[0]),
+                            Name = datos[1],
+                            Stock = Convert.ToInt32(datos[2]),
+                            Price = Convert.ToDecimal(datos[3])
+                        };
+
+                        listaHerramienta.Add(herramienta); // Agregar a la lista
+                    }
+                }
+            }
+        }
         private void dgvHerramienta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvHerramienta.Columns[e.ColumnIndex].Name == "btnEdit")
@@ -399,6 +432,46 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         private void txtID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader miLectura = new StreamReader("herramienta.txt");
+                string[] lineas = File.ReadAllLines("herramienta.txt");
+
+
+                listaHerramienta.Clear();
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+                    listaHerramienta.Add(new Herramienta
+                    {
+                        ID = Convert.ToInt32(datos[0]),
+                        Name = datos[1],
+                        Price = Convert.ToDecimal(datos[3]),
+                        Stock = Convert.ToInt32(datos[2])
+                    });
+                }
+                // Crea un origen de datos válido
+                ReportDataSource dataSource = new ReportDataSource("dsHerramientas", listaHerramienta);
+
+                reporteReactivos reporte = new reporteReactivos();
+
+                // Configura el informe
+                reporte.RvReactivos.LocalReport.DataSources.Clear();
+                reporte.RvReactivos.LocalReport.DataSources.Add(dataSource);
+                reporte.RvReactivos.LocalReport.ReportEmbeddedResource = "Zas_Sistema_Administrativo_y_Inventario.Reportes.rptHerramientas.rdlc";
+
+                // Actualiza el informe
+                reporte.RvReactivos.RefreshReport();
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

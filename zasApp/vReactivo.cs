@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,9 @@ using Zas_Sistema_Administrativo_y_Inventario.Inventario;
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
     public partial class vReactivo : Form
-    {
+    {   
 
+        private List<Reactivo> listaR = new List<Reactivo>();
         private int idMax = 0;
 
         public vReactivo()
@@ -27,8 +29,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             dgvReactivos.Columns[2].Name = "FORMULA";
             dgvReactivos.Columns[3].Name = "STOCK";
             dgvReactivos.Columns[4].Name = "PRECIO";
-            
-           
+
+
 
             dgvReactivos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -48,9 +50,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             btnDel.UseColumnTextForButtonValue = true;
             dgvReactivos.Columns.Add(btnDel);
         }
-       
 
-        private void getMaxID() {
+
+        private void getMaxID()
+        {
 
             if (File.Exists("reactivos.txt"))
             {
@@ -58,14 +61,15 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 if (lineas.Length > 0)
                 {
-                    
+
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
-                       Console.WriteLine(datos);
+                        Console.WriteLine(datos);
                         int temp = Convert.ToInt32(datos[0]);
 
-                        if (idMax < temp) {
+                        if (idMax < temp)
+                        {
                             idMax = temp;
                         }
                     }
@@ -92,16 +96,18 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void btnAgrgrReact_Click(object sender, EventArgs e)
         {
+
             bool valido = false;
 
             if (txtIDreactivo.Text != "" && txtNombre.Text != "" && txtFormula.Text != "" && txtStock.Text != "" && txtPrecio.Text != "")
             {
-                try {
-                     Convert.ToDecimal(txtPrecio.Text);
+                try
+                {
+                    Convert.ToDecimal(txtPrecio.Text);
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("El precio debe ser un numero entero");
+                    MessageBox.Show("El precio debe ser un número decimal");
                     return;
                 }
 
@@ -111,7 +117,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("El stock debe ser un numero entero");
+                    MessageBox.Show("El stock debe ser un número entero");
                     return;
                 }
 
@@ -129,60 +135,79 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                     string[] lineas = File.ReadAllLines("reactivos.txt");
                     miLectura.Close();
-                    bool encontrado = false;
+
+                    // Cargar datos existentes en la lista
+                    listaR.Clear();
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
-                        if (Convert.ToInt32(datos[0]) == reactivo.ID)
+                        listaR.Add(new Reactivo
+                        {
+                            ID = Convert.ToInt32(datos[0]),
+                            Name = datos[1],
+                            Formula = datos[2],
+                            Stock = Convert.ToInt32(datos[3]),
+                            Price = Convert.ToDecimal(datos[4])
+                        });
+                    }
+
+                    bool encontrado = false;
+                    foreach (Reactivo r in listaR)
+                    {
+                        if (r.ID == reactivo.ID)
                         {
                             encontrado = true;
                             break;
                         }
                     }
+
                     if (encontrado)
                     {
-                        MessageBox.Show("Este ID ya esta ocupado");
+                        MessageBox.Show("Este ID ya está ocupado");
                     }
                     else
                     {
+                        // Agregar reactivo a la lista y al archivo
+                        listaR.Add(reactivo);
+
                         StreamWriter miEscritura = new StreamWriter("reactivos.txt", append: true);
-                        miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
+                        miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price);
                         miEscritura.Close();
+
                         idMax = idMax + 1;
                         txtIDreactivo.Text = idMax.ToString();
                         MessageBox.Show("Reactivo agregado correctamente");
                         Limpiar();
                         mostrarDtgvReact();
                     }
-
                 }
-
                 else
                 {
+                    // Si el archivo no existe, crearlo y agregar el primer reactivo
                     StreamWriter miEscritura = File.CreateText("reactivos.txt");
-
 
                     reactivo.ID = Convert.ToInt32(txtIDreactivo.Text);
                     reactivo.Name = txtNombre.Text;
                     reactivo.Formula = txtFormula.Text;
                     reactivo.Stock = Convert.ToInt32(txtStock.Text);
                     reactivo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
+
+                    listaR.Add(reactivo); // Agregar a la lista
+
+                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price);
                     miEscritura.Close();
+
                     idMax = idMax + 1;
                     txtIDreactivo.Text = idMax.ToString();
                     MessageBox.Show("Reactivo agregado correctamente");
                     Limpiar();
                     mostrarDtgvReact();
-
-
                 }
             }
             else
             {
-                MessageBox.Show("No puede dejar ningun campo vacio");
+                MessageBox.Show("No puede dejar ningún campo vacío");
             }
-
 
         }
 
@@ -211,7 +236,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
             }
         }
-        
+
         private void Limpiar()
         {
             txtNombre.Text = "";
@@ -226,7 +251,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
             Limpiar();
 
-            if(File.Exists("reactivos.txt"))
+            if (File.Exists("reactivos.txt"))
             {
                 string[] lineas = File.ReadAllLines("reactivos.txt");
 
@@ -249,9 +274,9 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
             }
         }
-        
 
-       
+
+
 
 
         private void btnGuardarReact_Click(object sender, EventArgs e)
@@ -262,67 +287,85 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 if (File.Exists("reactivos.txt"))
                 {
-                    StreamReader miLectura = new StreamReader("reactivos.txt");
+                    // Lee los datos del archivo
+                    string[] lineas = File.ReadAllLines("reactivos.txt");
 
+                    // Carga los datos existentes en la lista
+                    listaR.Clear();
+                    foreach (string linea in lineas)
+                    {
+                        string[] datos = linea.Split(',');
+                        listaR.Add(new Reactivo
+                        {
+                            ID = Convert.ToInt32(datos[0]),
+                            Name = datos[1],
+                            Formula = datos[2],
+                            Stock = Convert.ToInt32(datos[3]),
+                            Price = Convert.ToDecimal(datos[4])
+                        });
+                    }
+
+                    // Actualiza los datos del reactivo
                     reactivo.ID = Convert.ToInt32(txtIDreactivo.Text);
                     reactivo.Name = txtNombre.Text;
                     reactivo.Formula = txtFormula.Text;
                     reactivo.Stock = Convert.ToInt32(txtStock.Text);
                     reactivo.Price = Convert.ToDecimal(txtPrecio.Text);
 
-                    string[] lineas = File.ReadAllLines("reactivos.txt");
-                    miLectura.Close();
                     bool encontrado = false;
-                    int i = 0;
-                    for (i = 0; i < lineas.Length; i++)
+
+                    for (int i = 0; i < listaR.Count; i++)
                     {
-                        string[] datos = lineas[i].Split(',');
-                        if (Convert.ToInt32(datos[0]) == reactivo.ID)
+                        if (listaR[i].ID == reactivo.ID)
                         {
+                            // Actualiza la lista
+                            listaR[i] = reactivo;
+
+                            // Actualiza el archivo
+                            lineas[i] = $"{reactivo.ID},{reactivo.Name},{reactivo.Formula},{reactivo.Stock},{reactivo.Price}";
                             encontrado = true;
-                            lineas[i] = reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1";
                             break;
                         }
                     }
+
                     if (encontrado)
                     {
-
-
+                        // Guarda los cambios en el archivo
                         File.WriteAllLines("reactivos.txt", lineas);
+
                         MessageBox.Show("Reactivo actualizado correctamente");
                         Limpiar();
-                        mostrarDtgvReact();
+                        mostrarDtgvReact(); // Recargar datos en el DataGridView
                     }
                     else
                     {
-                        MessageBox.Show("No se encontro un reactivo con este ID");
+                        MessageBox.Show("No se encontró un reactivo con este ID");
                     }
-
                 }
-
                 else
                 {
+                    // Si el archivo no existe, lo crea y agrega el reactivo
                     StreamWriter miEscritura = File.CreateText("reactivos.txt");
-
 
                     reactivo.ID = Convert.ToInt32(txtIDreactivo.Text);
                     reactivo.Name = txtNombre.Text;
                     reactivo.Formula = txtFormula.Text;
                     reactivo.Stock = Convert.ToInt32(txtStock.Text);
                     reactivo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(reactivo.ID + "," + reactivo.Name + "," + reactivo.Formula + "," + reactivo.Stock + "," + reactivo.Price + "1");
+
+                    listaR.Add(reactivo); // Agrega el reactivo a la lista
+
+                    miEscritura.WriteLine($"{reactivo.ID},{reactivo.Name},{reactivo.Formula},{reactivo.Stock},{reactivo.Price}");
                     miEscritura.Close();
 
-                    MessageBox.Show("Reactivo actualizado correctamente");
+                    MessageBox.Show("Reactivo creado correctamente");
                     Limpiar();
-                    mostrarDtgvReact();
-
-
+                    mostrarDtgvReact(); // Recargar datos en el DataGridView
                 }
             }
             else
             {
-                MessageBox.Show("No puede dejar ningun campo vacio");
+                MessageBox.Show("No puede dejar ningún campo vacío");
             }
         }
 
@@ -342,7 +385,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 for (i = 0; i < lineas.Length; i++)
                 {
                     string[] datos = lineas[i].Split(',');
-                    if (Convert.ToInt32(datos[0]) == Convert.ToInt32(id) )
+                    if (Convert.ToInt32(datos[0]) == Convert.ToInt32(id))
                     {
                         encontrado = true;
                         lineas[i] = "";
@@ -397,7 +440,46 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
+            try
+            {
+                StreamReader miLectura = new StreamReader("reactivos.txt");
+                string[] lineas = File.ReadAllLines("reactivos.txt");
+
+
+                listaR.Clear();
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+                    listaR.Add(new Reactivo
+                    {
+                        ID = Convert.ToInt32(datos[0]),
+                        Name = datos[1],
+                        Formula = datos[2],
+                        Stock = Convert.ToInt32(datos[3]),
+                        Price = Convert.ToDecimal(datos[4])
+                    });
+                }
+                // Crea un origen de datos válido
+                ReportDataSource dataSource = new ReportDataSource("dsReactivos", listaR);
+
+                reporteReactivos reporte = new reporteReactivos();
+
+                // Configura el informe
+                reporte.RvReactivos.LocalReport.DataSources.Clear();
+                reporte.RvReactivos.LocalReport.DataSources.Add(dataSource);
+                reporte.RvReactivos.LocalReport.ReportEmbeddedResource = "Zas_Sistema_Administrativo_y_Inventario.Reportes.rptReactivos.rdlc";
+
+                // Actualiza el informe
+                reporte.RvReactivos.RefreshReport();
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
     }
+            
 }

@@ -3,63 +3,73 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using Zas_Sistema_Administrativo_y_Inventario.Inventario;
-using Zas_Sistema_Administrativo_y_Inventario.Usuarios;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
     public partial class vUsuario : Form
     {
-    
+        private string usuarioOriginal;
         public vUsuario()
         {
             InitializeComponent();
+            ConfigurarDataGridView();
+            mostrarDtgvUsuario();
+        }
 
+        private void ConfigurarDataGridView()
+        {
             dgvUsuario.ColumnCount = 4;
-
-            dgvUsuario.Columns[0].Name = "ID";
-            dgvUsuario.Columns[1].Name = "NOMBRE";
-            dgvUsuario.Columns[2].Name = "STOCK";
-            dgvUsuario.Columns[3].Name = "PRECIO";
-
+            dgvUsuario.Columns[0].Name = "NOMBRE";
+            dgvUsuario.Columns[1].Name = "USUARIO";
+            dgvUsuario.Columns[2].Name = "CONTRASEÑA";
+            dgvUsuario.Columns[3].Name = "TELEFONO";
             dgvUsuario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            
-            mostrarDtgvUsuario();
-            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-            btnEdit.HeaderText = "EDITAR";
-            btnEdit.Text = "Editar";
-            btnEdit.Name = "btnEdit";
-            btnEdit.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn
+            {
+                HeaderText = "EDITAR",
+                Text = "Editar",
+                Name = "btnEdit",
+                UseColumnTextForButtonValue = true
+            };
             dgvUsuario.Columns.Add(btnEdit);
 
-            DataGridViewButtonColumn btnDel = new DataGridViewButtonColumn();
-            btnDel.HeaderText = "ELIMINAR";
-            btnDel.Text = "ELIMINAR";
-            btnDel.Name = "btnDel";
-            btnDel.UseColumnTextForButtonValue = true;
+            DataGridViewButtonColumn btnDel = new DataGridViewButtonColumn
+            {
+                HeaderText = "ELIMINAR",
+                Text = "Eliminar",
+                Name = "btnDel",
+                UseColumnTextForButtonValue = true
+            };
             dgvUsuario.Columns.Add(btnDel);
         }
+
         private void mostrarDtgvUsuario()
         {
-            if (File.Exists("usuario.txt"))
+            try
             {
-                dgvUsuario.Rows.Clear();
-                string[] lineas = File.ReadAllLines("usuario.txt");
-
-                if (lineas.Length > 0)
+                if (File.Exists("usuario.txt"))
                 {
+                    dgvUsuario.Rows.Clear();
+                    string[] lineas = File.ReadAllLines("usuario.txt");
+
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
-                        dgvUsuario.Rows.Add(datos);
+                        if (datos.Length == 4) // Validación de columnas
+                        {
+                            dgvUsuario.Rows.Add(datos);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar datos: {ex.Message}");
             }
         }
 
@@ -75,76 +85,166 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void btnAgrgr_Click(object sender, EventArgs e)
         {
-            bool valido = false;
-
-            if (txtNombre.Text != "" && txtUsuario.Text != "" && txtContraseña.Text != "" && txtTelefono.Text != "")
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+                string.IsNullOrWhiteSpace(txtContraseña.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
-               
+                MessageBox.Show("No puede dejar ningún campo vacío.");
+                return;
+            }
 
-                Admin user = new Admin();
+            try
+            {
+                var userLine = $"{txtNombre.Text},{txtUsuario.Text},{txtContraseña.Text},{txtTelefono.Text}";
 
                 if (File.Exists("usuario.txt"))
                 {
-                    StreamReader miLectura = new StreamReader("usuario.txt");
-
-                    user.Name = txtNombre.Text;
-                    user.User = txtUsuario.Text;
-                    user.Password = txtContraseña.Text;
-                    user.Phone = txtTelefono.Text;
-
                     string[] lineas = File.ReadAllLines("usuario.txt");
-                    miLectura.Close();
-                    bool encontrado = false;
-                    foreach (string linea in lineas)
+                    if (lineas.Any(linea => linea.Split(',')[1] == txtUsuario.Text)) // Validar usuario único
                     {
-                        string[] datos = linea.Split(',');
-                        if (datos[0] == txtUsuario.Text)
-                        {
-                            encontrado = true;
-                            break;
-                        }
-                    }
-                    if (encontrado)
-                    {
-                        MessageBox.Show("Este usuario ya esta existe");
-                    }
-                    else
-                    {
-                        StreamWriter miEscritura = new StreamWriter("usuario.txt", append: true);
-                        miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
-                        miEscritura.Close();
-                        idMax = idMax + 1;
-                        txtID.Text = idMax.ToString();
-                        MessageBox.Show("Equipamiento agregado correctamente");
-                        Limpiar();
-                        mostrarDtgvEquipa();
+                        MessageBox.Show("Este usuario ya existe.");
+                        return;
                     }
 
+                    File.AppendAllLines("usuario.txt", new[] { userLine });
                 }
-
                 else
                 {
-                    StreamWriter miEscritura = File.CreateText("equipamiento.txt");
-
-                    equipo.ID = Convert.ToInt32(txtID.Text);
-                    equipo.Name = txtNombre.Text;
-                    equipo.Stock = Convert.ToInt32(txtStock.Text);
-                    equipo.Price = Convert.ToDecimal(txtPrecio.Text);
-                    miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
-                    miEscritura.Close();
-                    idMax = idMax + 1;
-                    txtID.Text = idMax.ToString();
-                    MessageBox.Show("Equipamiento agregado correctamente");
-                    Limpiar();
-                    mostrarDtgvEquipa();
-
-
+                    File.WriteAllText("usuario.txt", userLine + Environment.NewLine);
                 }
+
+                MessageBox.Show("Usuario agregado correctamente.");
+                Limpiar();
+                mostrarDtgvUsuario();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No puede dejar ningun campo vacio");
+                MessageBox.Show($"Error al agregar usuario: {ex.Message}");
             }
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validar que los campos no estén vacíos
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                    string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+                    string.IsNullOrWhiteSpace(txtContraseña.Text) ||
+                    string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    MessageBox.Show("No puede dejar ningún campo vacío.");
+                    return;
+                }
+
+                // Verificar si el archivo de usuarios existe
+                if (!File.Exists("usuario.txt"))
+                {
+                    MessageBox.Show("El archivo de usuarios no existe.");
+                    return;
+                }
+
+                // Leer el archivo y procesar las líneas
+                string[] lineas = File.ReadAllLines("usuario.txt");
+                bool encontrado = false;
+
+                for (int i = 0; i < lineas.Length; i++)
+                {
+                    string[] datos = lineas[i].Split(',');
+
+                    // Validar que la línea tenga el formato correcto
+                    if (datos.Length != 4)
+                    {
+                        continue; // Ignorar líneas mal formateadas
+                    }
+
+                    // Comparar el usuario original con el usuario en el archivo
+                    if (datos[1] == usuarioOriginal) // Usar la variable temporal
+                    {
+                        encontrado = true;
+
+                        // Actualizar los datos en el archivo con los valores del formulario
+                        lineas[i] = $"{txtNombre.Text.Trim()},{txtUsuario.Text.Trim()},{txtContraseña.Text.Trim()},{txtTelefono.Text.Trim()}";
+                        break;
+                    }
+                }
+
+                if (encontrado)
+                {
+                    // Escribir las líneas actualizadas en el archivo
+                    File.WriteAllLines("usuario.txt", lineas);
+                    MessageBox.Show("Usuario actualizado correctamente.");
+                    Limpiar();
+                    mostrarDtgvUsuario();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró un usuario con el nombre de usuario original.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al actualizar el usuario: {ex.Message}");
+            }
+        }
+
+
+
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void Eliminar(string usuario)
+        {
+            try
+            {
+                if (!File.Exists("usuario.txt"))
+                {
+                    MessageBox.Show("No hay usuarios registrados.");
+                    return;
+                }
+
+                string[] lineas = File.ReadAllLines("usuario.txt");
+                string[] nuevasLineas = lineas.Where(linea => linea.Split(',')[1] != usuario).ToArray();
+
+                File.WriteAllLines("usuario.txt", nuevasLineas);
+
+                MessageBox.Show("Usuario eliminado correctamente.");
+                mostrarDtgvUsuario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar usuario: {ex.Message}");
+            }
+        }
+
+        private void dgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvUsuario.Columns[e.ColumnIndex].Name == "btnEdit")
+            {
+                // Llenar los campos de texto con los valores de la fila seleccionada
+                txtNombre.Text = dgvUsuario.CurrentRow.Cells[0].Value.ToString();
+                txtUsuario.Text = dgvUsuario.CurrentRow.Cells[1].Value.ToString();
+                txtContraseña.Text = dgvUsuario.CurrentRow.Cells[2].Value.ToString();
+                txtTelefono.Text = dgvUsuario.CurrentRow.Cells[3].Value.ToString();
+
+                // Guardar el usuario original en la variable temporal
+                usuarioOriginal = dgvUsuario.CurrentRow.Cells[1].Value.ToString();
+
+                btnGuardar.Enabled = true;
+                btnAgrgr.Enabled = false;
+            }
+
+            if (dgvUsuario.Columns[e.ColumnIndex].Name == "btnDel")
+            {
+                Eliminar(dgvUsuario.CurrentRow.Cells[0].Value.ToString());
+            }
+        }
+
     }
 }
+

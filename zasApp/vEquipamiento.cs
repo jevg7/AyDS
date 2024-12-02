@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ using Zas_Sistema_Administrativo_y_Inventario.Inventario;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
+
     public partial class vEquipamiento : Form
     {
+        private List<Equipo> listaEquipos = new List<Equipo>();
+
         private int idMax = 0;
         public vEquipamiento()
         {
@@ -177,6 +181,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         MessageBox.Show("Equipamiento agregado correctamente");
                         Limpiar();
                         mostrarDtgvEquipa();
+                        CargarLista();
                     }
 
                 }
@@ -196,6 +201,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Equipamiento agregado correctamente");
                     Limpiar();
                     mostrarDtgvEquipa();
+                    CargarLista();
 
 
                 }
@@ -205,6 +211,32 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 MessageBox.Show("No puede dejar ningun campo vacio");
             }
 
+        }
+
+        private void CargarLista()
+        {
+            if (File.Exists("equipamiento.txt"))
+            {
+                string[] lineas = File.ReadAllLines("equipamiento.txt");
+                listaEquipos.Clear(); // Limpiar la lista para evitar duplicados
+
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+                    if (datos.Length >= 4) // Validar que la línea contenga los campos necesarios
+                    {
+                        Equipo equipo = new Equipo
+                        {
+                            ID = Convert.ToInt32(datos[0]),
+                            Name = datos[1],
+                            Stock = Convert.ToInt32(datos[2]),
+                            Price = Convert.ToDecimal(datos[3])
+                        };
+
+                        listaEquipos.Add(equipo); // Agregar a la lista
+                    }
+                }
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -264,6 +296,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         MessageBox.Show("Equipamiento actualizado correctamente");
                         Limpiar();
                         mostrarDtgvEquipa();
+                        CargarLista();
                     }
                     else
                     {
@@ -287,6 +320,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Equipamiento actualizado correctamente");
                     Limpiar();
                     mostrarDtgvEquipa();
+                    CargarLista();
 
 
                 }
@@ -359,6 +393,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     MessageBox.Show("Equipamiento actualizado correctamente");
                     Limpiar();
                     mostrarDtgvEquipa();
+                    CargarLista();
                 }
                 else
                 {
@@ -393,6 +428,46 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         private void vEquipamiento_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader miLectura = new StreamReader("equipamiento.txt");
+                string[] lineas = File.ReadAllLines("equipamiento.txt");
+
+
+                listaEquipos.Clear();
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+                    listaEquipos.Add(new Equipo
+                    {
+                        ID = Convert.ToInt32(datos[0]),
+                        Name = datos[1],
+                        Price = Convert.ToInt32(datos[3]),
+                        Stock = Convert.ToInt32(datos[2]),
+                      });
+                }
+                // Crea un origen de datos válido
+                ReportDataSource dataSource = new ReportDataSource("dsEquipamiento", listaEquipos);
+
+                reporteReactivos reporte = new reporteReactivos();
+
+                // Configura el informe
+                reporte.RvReactivos.LocalReport.DataSources.Clear();
+                reporte.RvReactivos.LocalReport.DataSources.Add(dataSource);
+                reporte.RvReactivos.LocalReport.ReportEmbeddedResource = "Zas_Sistema_Administrativo_y_Inventario.Reportes.rptEquipamiento.rdlc";
+
+                // Actualiza el informe
+                reporte.RvReactivos.RefreshReport();
+                reporte.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al generar el informe: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

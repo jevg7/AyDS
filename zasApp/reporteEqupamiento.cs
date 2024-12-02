@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Zas_Sistema_Administrativo_y_Inventario
 {
-    public partial class ModUsuario : Form
+    public partial class reporteEqupamiento : Form
     {
-        public ModUsuario()
+        public reporteEqupamiento()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void reporteEqupamiento_Load(object sender, EventArgs e)
         {
 
+            this.reportViewer1.RefreshReport();
         }
     }
 }

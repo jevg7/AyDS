@@ -77,7 +77,7 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1161, 607);
@@ -88,9 +88,9 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1153, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Agregar";
@@ -115,9 +115,9 @@
             this.groupBox2.Controls.Add(this.dgvOrden);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 287);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1139, 286);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -128,7 +128,7 @@
             this.btnLimpiarOrden.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLimpiarOrden.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.brocha;
             this.btnLimpiarOrden.Location = new System.Drawing.Point(921, 235);
-            this.btnLimpiarOrden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarOrden.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarOrden.Name = "btnLimpiarOrden";
             this.btnLimpiarOrden.Size = new System.Drawing.Size(117, 50);
             this.btnLimpiarOrden.TabIndex = 10;
@@ -138,9 +138,9 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.lista_de_la_compra;
+            this.btnGuardar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.salvar;
             this.btnGuardar.Location = new System.Drawing.Point(716, 234);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(117, 50);
             this.btnGuardar.TabIndex = 9;
@@ -172,7 +172,7 @@
             // 
             this.dtpNeeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNeeed.Location = new System.Drawing.Point(771, 132);
-            this.dtpNeeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNeeed.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNeeed.MinDate = new System.DateTime(2024, 12, 2, 0, 0, 0, 0);
             this.dtpNeeed.Name = "dtpNeeed";
             this.dtpNeeed.Size = new System.Drawing.Size(365, 30);
@@ -195,7 +195,7 @@
             this.dtpFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Location = new System.Drawing.Point(683, 25);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.MinDate = new System.DateTime(2024, 12, 2, 0, 0, 0, 0);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(453, 30);
@@ -218,7 +218,7 @@
             this.txtEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmpleado.Enabled = false;
             this.txtEmpleado.Location = new System.Drawing.Point(697, 84);
-            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Size = new System.Drawing.Size(439, 30);
             this.txtEmpleado.TabIndex = 2;
@@ -241,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrden.Location = new System.Drawing.Point(0, 31);
-            this.dgvOrden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOrden.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrden.Name = "dgvOrden";
             this.dgvOrden.RowHeadersWidth = 51;
             this.dgvOrden.Size = new System.Drawing.Size(560, 242);
@@ -258,9 +258,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1143, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -270,7 +270,7 @@
             // 
             this.btnLimpiar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.brocha;
             this.btnLimpiar.Location = new System.Drawing.Point(948, 34);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(117, 50);
             this.btnLimpiar.TabIndex = 6;
@@ -283,7 +283,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.Location = new System.Drawing.Point(4, 95);
-            this.dgvBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.RowHeadersWidth = 51;
             this.dgvBuscar.Size = new System.Drawing.Size(1145, 166);
@@ -294,7 +294,7 @@
             // 
             this.btnBuscar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.buscar__1_;
             this.btnBuscar.Location = new System.Drawing.Point(801, 34);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(117, 50);
             this.btnBuscar.TabIndex = 4;
@@ -304,7 +304,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(148, 46);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(616, 30);
             this.txtCodigo.TabIndex = 2;
@@ -324,9 +324,9 @@
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1153, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar/Eliminar";
@@ -340,9 +340,9 @@
             this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(11, 282);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(1133, 278);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
@@ -355,7 +355,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(1125, 228);
@@ -374,9 +374,9 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(7, 7);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(1137, 274);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
@@ -386,7 +386,7 @@
             // 
             this.btnLimpiar2.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.brocha;
             this.btnLimpiar2.Location = new System.Drawing.Point(1000, 27);
-            this.btnLimpiar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar2.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar2.Name = "btnLimpiar2";
             this.btnLimpiar2.Size = new System.Drawing.Size(117, 50);
             this.btnLimpiar2.TabIndex = 7;
@@ -397,7 +397,7 @@
             // 
             this.btnBorrar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.borrar;
             this.btnBorrar.Location = new System.Drawing.Point(875, 27);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(117, 50);
             this.btnBorrar.TabIndex = 6;
@@ -409,7 +409,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBuscarOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscarOrden.Location = new System.Drawing.Point(4, 107);
-            this.dgvBuscarOrden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBuscarOrden.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBuscarOrden.Name = "dgvBuscarOrden";
             this.dgvBuscarOrden.RowHeadersWidth = 51;
             this.dgvBuscarOrden.Size = new System.Drawing.Size(1125, 160);
@@ -420,7 +420,7 @@
             // 
             this.btnBuscarOrden.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.buscar__1_;
             this.btnBuscarOrden.Location = new System.Drawing.Point(749, 27);
-            this.btnBuscarOrden.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarOrden.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarOrden.Name = "btnBuscarOrden";
             this.btnBuscarOrden.Size = new System.Drawing.Size(117, 50);
             this.btnBuscarOrden.TabIndex = 4;
@@ -430,7 +430,7 @@
             // txtIdBusq
             // 
             this.txtIdBusq.Location = new System.Drawing.Point(111, 36);
-            this.txtIdBusq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdBusq.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdBusq.Name = "txtIdBusq";
             this.txtIdBusq.Size = new System.Drawing.Size(616, 30);
             this.txtIdBusq.TabIndex = 2;
@@ -454,7 +454,7 @@
             this.ClientSize = new System.Drawing.Size(1161, 607);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "vOrden";
             this.Text = "vOrden";
             this.tabControl.ResumeLayout(false);

@@ -622,7 +622,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void dgvBuscarOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView2.Columns[e.ColumnIndex].Name == "btnDetalles")
+            if (dgvBuscarOrden.Columns[e.ColumnIndex].Name == "btnDetalles")
             {
 
                 if (dataGridView2.DataSource == null)
@@ -641,7 +641,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
 
                 }
-                string idOrden = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string idOrden = dgvBuscarOrden.Rows[e.RowIndex].Cells[0].Value.ToString();
 
 
                 dataGridView2.Rows.Clear();

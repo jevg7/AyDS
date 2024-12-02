@@ -100,7 +100,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             /*Usuario frm = new Usuario();
             frm.ShowDialog();*/
             actButton(sender, Colores.color1);
-            //Abrir_Form(new Reactivos());
+            Abrir_Form(new vUsuario());
         }
 
 

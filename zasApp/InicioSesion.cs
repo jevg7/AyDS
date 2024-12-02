@@ -19,18 +19,18 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void btningresar_Click(object sender, EventArgs e)
+        /*private void btningresar_Click(object sender, EventArgs e)
         {
             string user = txtUsuarioLogin.Text;
             string password = txtContraLogin.Text;
-            if (File.Exists("usuarios.txt"))
+            if (File.Exists("usuario.txt"))
             {
-                string[] lineas = File.ReadAllLines("usuarios.txt");
+                string[] lineas = File.ReadAllLines("usuario.txt");
                 bool encontrado = false;
                 foreach (string linea in lineas)
                 {
                     string[] datos = linea.Split(',');
-                    if (datos[0] == user && datos[1] == password)
+                    if (datos[1] == user && datos[2] == password)
                     {
                         encontrado = true;
                         session.usuario = datos[0];
@@ -53,14 +53,78 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
             else
             {
-                StreamWriter miEscritura = File.CreateText("usuarios.txt");
+                StreamWriter miEscritura = File.CreateText("usuario.txt");
                 miEscritura.WriteLine("Admin,123,1");
                 miEscritura.Close();
 
             }
 
            
+        }*/
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            string user = txtUsuarioLogin.Text.Trim();
+            string password = txtContraLogin.Text.Trim();
+
+            // Validar si los campos están vacíos
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Por favor, ingrese el usuario y la contraseña.");
+                return;
+            }
+
+            // Verificar si el archivo existe
+            if (File.Exists("usuario.txt"))
+            {
+                string[] lineas = File.ReadAllLines("usuario.txt");
+                bool encontrado = false;
+
+                // Procesar cada línea del archivo
+                foreach (string linea in lineas)
+                {
+                    string[] datos = linea.Split(',');
+
+                    // Validar que la línea tenga exactamente 4 columnas
+                    if (datos.Length != 4)
+                    {
+                        continue; // Ignorar líneas mal formateadas
+                    }
+
+                    // Comparar usuario y contraseña
+                    if (datos[1] == user && datos[2] == password)
+                    {
+                        encontrado = true;
+                        session.usuario = datos[0]; // Nombre del usuario
+                        session.rol = "Usuario";    // Aquí puedes asignar un rol según corresponda
+                        break;
+                    }
+                }
+
+                if (encontrado)
+                {
+                    // Mostrar la pantalla principal si el usuario y contraseña son correctos
+                    Pantallaprinci frm = new Pantallaprinci();
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Mostrar mensaje de error si no se encuentra el usuario
+                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                }
+            }
+            else
+            {
+                // Crear el archivo por defecto si no existe
+                using (StreamWriter miEscritura = File.CreateText("usuario.txt"))
+                {
+                    miEscritura.WriteLine("Administrador,Admin,123456,5551234567");
+                }
+
+                MessageBox.Show("Archivo de usuarios creado. Usuario: Admin, Contraseña: 123456");
+            }
         }
+
 
         private void mostrarContra_CheckedChanged(object sender, EventArgs e)
         {
