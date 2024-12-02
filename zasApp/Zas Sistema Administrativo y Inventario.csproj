@@ -67,6 +67,14 @@
     <Compile Include="AñadirUsuarios.Designer.cs">
       <DependentUpon>AñadirUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\dsReactivos.cs">
+      <DependentUpon>dsReactivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsReactivos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReactivos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +105,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteReactivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporteReactivos.Designer.cs">
+      <DependentUpon>reporteReactivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="session.cs" />
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
@@ -105,7 +119,6 @@
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\Admin.cs" />
-    <Compile Include="Users\Trabajador.cs" />
     <Compile Include="vEquipamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +142,12 @@
     </Compile>
     <Compile Include="vReactivo.Designer.cs">
       <DependentUpon>vReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vUsuario.Designer.cs">
+      <DependentUpon>vUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AñadirUsuarios.resx">
       <DependentUpon>AñadirUsuarios.cs</DependentUpon>
@@ -155,6 +174,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reporteReactivos.resx">
+      <DependentUpon>reporteReactivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReactivos.rdlc" />
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +193,20 @@
     <EmbeddedResource Include="vReactivo.resx">
       <DependentUpon>vReactivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vUsuario.resx">
+      <DependentUpon>vUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet\dsReactivos.xsc">
+      <DependentUpon>dsReactivos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsReactivos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReactivos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsReactivos.xss">
+      <DependentUpon>dsReactivos.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -243,5 +280,6 @@
   <ItemGroup>
     <None Include="Resources\brocha.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

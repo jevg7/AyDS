@@ -229,7 +229,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
             else
             {
-                MessageBox.Show("Uno o más archivos no existen. Verifique y vuelva a intentar.");
+                
             }
         }
 
@@ -607,7 +607,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
             else
             {
-                MessageBox.Show("Uno o más archivos no existen. Verifique y vuelva a intentar.");
+               
             }
 
         }
@@ -615,12 +615,17 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           
-               if (dataGridView2.Columns[e.ColumnIndex].Name == "btnDetalles")
-               {
-                    
-                    if(dataGridView2.DataSource == null)
+
+
+
+        }
+
+        private void dgvBuscarOrden_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.Columns[e.ColumnIndex].Name == "btnDetalles")
+            {
+
+                if (dataGridView2.DataSource == null)
                 {
                     dataGridView2.ColumnCount = 6;
 
@@ -633,64 +638,36 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                     dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                    
+
 
                 }
                 string idOrden = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                    
-                    dataGridView2.Rows.Clear();
 
-                    
-                    if (File.Exists("detalleOrden.txt"))
+                dataGridView2.Rows.Clear();
+
+
+                if (File.Exists("detalleOrden.txt"))
+                {
+                    string[] lineas = File.ReadAllLines("detalleOrden.txt");
+
+                    foreach (var linea in lineas)
                     {
-                        string[] lineas = File.ReadAllLines("detalleOrden.txt");
+                        string[] datos = linea.Split(',');
 
-                        foreach (var linea in lineas)
+
+                        if (datos[0] == idOrden)
                         {
-                            string[] datos = linea.Split(',');
-
-                            
-                            if (datos[0] == idOrden) 
-                            {
-                                dataGridView2.Rows.Add(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5]);
-                            }
+                            dataGridView2.Rows.Add(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5]);
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("El archivo de detalles de órdenes no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
-         
-
-
-
+                else
+                {
+                    MessageBox.Show("El archivo de detalles de órdenes no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         #endregion
 

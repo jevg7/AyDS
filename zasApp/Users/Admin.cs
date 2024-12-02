@@ -9,9 +9,9 @@ namespace Zas_Sistema_Administrativo_y_Inventario.Usuarios
     public class Admin
     {
         public string Name { get; set; }
-        public string Password { get; set; }
         public string User { get; set; }
-        public string Email { get; set; }
+        public string Password { get; set; }
+        
         public string Phone { get; set; }
     }
 }
