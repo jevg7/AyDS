@@ -77,6 +77,12 @@
     <Compile Include="Inventario\Herramientas.cs" />
     <Compile Include="Inventario\Ordenes.cs" />
     <Compile Include="Inventario\Reactivos.cs" />
+    <Compile Include="message_input.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="message_input.Designer.cs">
+      <DependentUpon>message_input.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="message_input.resx">
+      <DependentUpon>message_input.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModUsuario.resx">
       <DependentUpon>ModUsuario.cs</DependentUpon>
@@ -230,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brocha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

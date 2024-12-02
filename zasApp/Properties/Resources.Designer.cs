@@ -83,6 +83,16 @@ namespace Zas_Sistema_Administrativo_y_Inventario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brocha {
+            get {
+                object obj = ResourceManager.GetObject("brocha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buscar__1_ {
             get {
                 object obj = ResourceManager.GetObject("buscar (1)", resourceCulture);
