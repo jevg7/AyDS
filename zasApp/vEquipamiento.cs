@@ -19,6 +19,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         private List<Equipo> listaEquipos = new List<Equipo>();
 
         private int idMax = 0;
+
+        //Inicializa la ventana
         public vEquipamiento()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             dgvEquipamiento.Columns.Add(btnDel);
         }
 
+        //Obtiene el ID máximo
         private void getMaxID()
         {
 
@@ -90,6 +93,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        //Muestra el DataGridView
+
         private void mostrarDtgvEquipa()
         {
             if (File.Exists("equipamiento.txt"))
@@ -108,6 +113,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        //Limpia los campos
         private void Limpiar()
         {
             txtNombre.Text = "";
@@ -117,9 +123,11 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             btnAgrgr.Enabled = true;
         }
 
+
+        
         private void btnAgrgr_Click(object sender, EventArgs e)
         {
-
+            //Valida que los campos no esten vacios
             bool valido = false;
 
             if (txtID.Text != "" && txtNombre.Text != "" && txtStock.Text != "" && txtPrecio.Text != "")
@@ -145,6 +153,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 }
 
                 Equipo equipo = new Equipo();
+                //Valida si el archivo existe
 
                 if (File.Exists("equipamiento.txt"))
                 {
@@ -158,6 +167,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     string[] lineas = File.ReadAllLines("equipamiento.txt");
                     miLectura.Close();
                     bool encontrado = false;
+                    //Recorre el archivo para validar si el ID ya existe
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
@@ -167,11 +177,13 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                             break;
                         }
                     }
+                    //Si el ID ya existe muestra un mensaje
                     if (encontrado)
                     {
                         MessageBox.Show("Este ID ya esta ocupado");
                     }
                     else
+                    //Si no existe el ID agrega el equipamiento
                     {
                         StreamWriter miEscritura = new StreamWriter("equipamiento.txt", append: true);
                         miEscritura.WriteLine(equipo.ID + "," + equipo.Name + "," + equipo.Stock + "," + equipo.Price + "2");
@@ -186,6 +198,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 }
 
+                //Si no existe el archivo crea uno nuevo
                 else
                 {
                     StreamWriter miEscritura = File.CreateText("equipamiento.txt");
@@ -206,6 +219,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 }
             }
+            //Si hay campos vacios muestra un mensaje
             else
             {
                 MessageBox.Show("No puede dejar ningun campo vacio");
@@ -213,6 +227,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        //Carga la lista de equipamiento
         private void CargarLista()
         {
             if (File.Exists("equipamiento.txt"))
@@ -239,6 +254,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        //Guarda los cambios en el archivo
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtID.Text != "" && txtNombre.Text != "" && txtStock.Text != "" && txtPrecio.Text != "")
@@ -332,6 +348,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        //Cancela la operación
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -360,6 +377,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        //Elimina un equipamiento
         private void Eliminar(string id)
         {
             Equipo equipo = new Equipo();
@@ -404,6 +422,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        //Muestra los datos en los campos
         private void dgvEquipamiento_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEquipamiento.Columns[e.ColumnIndex].Name == "btnEdit")
@@ -430,6 +449,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        //Genera el reporte
         private void btnReporte_Click(object sender, EventArgs e)
         {
             try

@@ -17,9 +17,13 @@ namespace Zas_Sistema_Administrativo_y_Inventario
     {
         private int idMax = 0;  
         private List<Herramienta> listaHerramienta =new List<Herramienta>();
+
+        // Constructor de la clase
         public vHerramienta()
         {
+           
             InitializeComponent();
+            // Centra el formulario en la pantalla
             dgvHerramienta.ColumnCount = 4;
 
             dgvHerramienta.Columns[0].Name = "ID";
@@ -46,6 +50,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             dgvHerramienta.Columns.Add(btnDel);
         }
 
+        // Método para obtener el ID máximo de las herramientas
         private void getMaxID()
         {
 
@@ -88,6 +93,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        // Método para mostrar las herramientas en el DataGridView
         private void mostrarDtgvHerramienta()
         {
             if (File.Exists("herramienta.txt"))
@@ -106,6 +112,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        // Método para limpiar los campos del formulario
         private void Limpiar()
         {
             txtNombre.Text = "";
@@ -119,6 +126,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
 
             bool valido = false;
+            // Validar que los campos no estén vacíos
 
             if (txtID.Text != "" && txtNombre.Text != "" && txtStock.Text != "" && txtPrecio.Text != "")
             {
@@ -142,8 +150,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     return;
                 }
 
+                // Crear una nueva instancia de la clase Herramienta
                 Herramienta herra = new Herramienta();
 
+                // Verificar si el archivo de herramientas existe
                 if (File.Exists("herramienta.txt"))
                 {
                     StreamReader miLectura = new StreamReader("herramienta.txt");
@@ -156,19 +166,25 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     string[] lineas = File.ReadAllLines("herramienta.txt");
                     miLectura.Close();
                     bool encontrado = false;
+                    
                     foreach (string linea in lineas)
                     {
                         string[] datos = linea.Split(',');
+                        // Verificar si el ID ya existe
                         if (Convert.ToInt32(datos[0]) == herra.ID)
                         {
                             encontrado = true;
                             break;
                         }
                     }
+
+                    // Mostrar mensaje si el ID ya existe
                     if (encontrado)
                     {
                         MessageBox.Show("Este ID ya esta ocupado");
                     }
+
+                    // Agregar la herramienta si el ID no existe
                     else
                     {
                         StreamWriter miEscritura = new StreamWriter("herramienta.txt", append: true);
@@ -183,6 +199,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                     }
 
                 }
+
+                // Crear el archivo de herramientas si no existe
 
                 else
                 {
@@ -204,6 +222,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                 }
             }
+            // Mostrar mensaje si hay campos vacíos
             else
             {
                 MessageBox.Show("No puede dejar ningun campo vacio");
@@ -211,6 +230,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        // Método para actualizar una herramienta
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtID.Text != "" && txtNombre.Text != "" && txtStock.Text != "" && txtPrecio.Text != "")
@@ -304,6 +324,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        // Método para limpiar los campos del formulario
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -332,6 +353,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        // Método para eliminar una herramienta
         private void Eliminar(string id)
         {
             Herramienta herra = new Herramienta();
@@ -376,7 +398,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
-
+        // Método para cargar la lista de herramientas
         private void CargarLista()
         {
             if (File.Exists("herrmaienta.txt"))
@@ -402,6 +424,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 }
             }
         }
+
+        // Método para cargar la lista de herramientas
         private void dgvHerramienta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvHerramienta.Columns[e.ColumnIndex].Name == "btnEdit")
@@ -433,6 +457,8 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         {
 
         }
+
+        // Método para generar un reporte de herramientas
 
         private void btnReporte_Click(object sender, EventArgs e)
         {

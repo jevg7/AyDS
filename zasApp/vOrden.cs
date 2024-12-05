@@ -20,6 +20,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         private int idMax2 = 0;
         public vOrden()
         {
+            // Inicializa el formulario
             InitializeComponent();
             getMaxID();
             getMaxID2();
@@ -36,6 +37,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
         }
 
         #region Agregar
+        // Método que se ejecuta al hacer clic en el botón "Buscar"
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text != "")
@@ -54,6 +56,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 Reactivo reactivo = new Reactivo();
                 Equipo equipo = new Equipo();
                 Herramienta herra = new Herramienta();
+                // Verificar si los archivos de productos existen
 
                 if (File.Exists("reactivos.txt") && File.Exists("equipamiento.txt") && File.Exists("herramienta.txt"))
                 {
@@ -90,12 +93,14 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
                     dgvBuscar.Rows.Clear();
 
+                    // Método para agregar una fila al DataGridView
 
                     void AgregarFila(string[] datos, string tipo)
                     {
                         dgvBuscar.Rows.Add(datos[0], datos[1], datos[2], datos[3], tipo);
                     }
 
+                    // Procesar cada línea de los archivos de productos
 
                     foreach (var linea in lineas)
                     {
@@ -143,6 +148,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+        // Método que se ejecuta al hacer clic en el botón "Limpiar"
         private void Limpiar()
         {
             txtCodigo.Text = "";
@@ -157,7 +163,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
 
 
-
+        // Método para mostrar los productos en el DataGridView
         private void mostrarDGV()
         {
 
@@ -233,6 +239,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
+        // Método que se ejecuta al hacer clic en el botón "Seleccionar"
         private void dgvBuscar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvBuscar.Columns[e.ColumnIndex].Name == "btnSelect")
@@ -279,6 +286,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
 
         }
 
+       
         private void getMaxID()
         {
 

@@ -53,7 +53,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar2 = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.dgvBuscarOrden = new System.Windows.Forms.DataGridView();
             this.btnBuscarOrden = new System.Windows.Forms.Button();
             this.txtIdBusq = new System.Windows.Forms.TextBox();
@@ -329,7 +328,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1153, 578);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buscar/Eliminar";
+            this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -367,7 +366,6 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.btnLimpiar2);
-            this.groupBox4.Controls.Add(this.btnBorrar);
             this.groupBox4.Controls.Add(this.dgvBuscarOrden);
             this.groupBox4.Controls.Add(this.btnBuscarOrden);
             this.groupBox4.Controls.Add(this.txtIdBusq);
@@ -385,23 +383,13 @@
             // btnLimpiar2
             // 
             this.btnLimpiar2.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.brocha;
-            this.btnLimpiar2.Location = new System.Drawing.Point(1000, 27);
+            this.btnLimpiar2.Location = new System.Drawing.Point(890, 26);
             this.btnLimpiar2.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar2.Name = "btnLimpiar2";
             this.btnLimpiar2.Size = new System.Drawing.Size(117, 50);
             this.btnLimpiar2.TabIndex = 7;
             this.btnLimpiar2.UseVisualStyleBackColor = true;
             this.btnLimpiar2.Click += new System.EventHandler(this.btnLimpiar2_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Image = global::Zas_Sistema_Administrativo_y_Inventario.Properties.Resources.borrar;
-            this.btnBorrar.Location = new System.Drawing.Point(875, 27);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(117, 50);
-            this.btnBorrar.TabIndex = 6;
-            this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // dgvBuscarOrden
             // 
@@ -503,7 +491,6 @@
         private System.Windows.Forms.Button btnBuscarOrden;
         private System.Windows.Forms.TextBox txtIdBusq;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnLimpiarOrden;
         private System.Windows.Forms.Button btnLimpiar2;

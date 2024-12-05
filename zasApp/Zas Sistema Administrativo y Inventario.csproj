@@ -147,12 +147,6 @@
     </Compile>
     <Compile Include="session.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="Usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario.Designer.cs">
-      <DependentUpon>Usuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Users\Admin.cs" />
     <Compile Include="vEquipamiento.cs">
       <SubType>Form</SubType>
@@ -219,10 +213,6 @@
     <EmbeddedResource Include="Reportes\rptEquipamiento.rdlc" />
     <EmbeddedResource Include="Reportes\rptHerramientas.rdlc" />
     <EmbeddedResource Include="Reportes\rptReactivos.rdlc" />
-    <EmbeddedResource Include="Usuario.resx">
-      <DependentUpon>Usuario.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="vEquipamiento.resx">
       <DependentUpon>vEquipamiento.cs</DependentUpon>
       <SubType>Designer</SubType>

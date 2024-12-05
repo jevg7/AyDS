@@ -19,50 +19,10 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        /*private void btningresar_Click(object sender, EventArgs e)
-        {
-            string user = txtUsuarioLogin.Text;
-            string password = txtContraLogin.Text;
-            if (File.Exists("usuario.txt"))
-            {
-                string[] lineas = File.ReadAllLines("usuario.txt");
-                bool encontrado = false;
-                foreach (string linea in lineas)
-                {
-                    string[] datos = linea.Split(',');
-                    if (datos[1] == user && datos[2] == password)
-                    {
-                        encontrado = true;
-                        session.usuario = datos[0];
-                        session.rol = datos[2];
-                        break;
-                    }
-                }
-                if (encontrado)
-                {
-                    Pantallaprinci frm = new Pantallaprinci();
-                    frm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                }
-            }
-
-
-            else
-            {
-                StreamWriter miEscritura = File.CreateText("usuario.txt");
-                miEscritura.WriteLine("Admin,123,1");
-                miEscritura.Close();
-
-            }
-
-           
-        }*/
+        // Método que se ejecuta al hacer clic en el botón "Ingresar"
         private void btningresar_Click(object sender, EventArgs e)
         {
+            // Obtener el usuario y la contraseña ingresados en los campos de texto
             string user = txtUsuarioLogin.Text.Trim();
             string password = txtContraLogin.Text.Trim();
 
@@ -73,15 +33,17 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                 return;
             }
 
-            // Verificar si el archivo existe
+            // Verificar si el archivo de usuarios existe
             if (File.Exists("usuario.txt"))
             {
+                // Leer todas las líneas del archivo de usuarios
                 string[] lineas = File.ReadAllLines("usuario.txt");
                 bool encontrado = false;
 
                 // Procesar cada línea del archivo
                 foreach (string linea in lineas)
                 {
+                    // Dividir la línea en sus campos separados por comas
                     string[] datos = linea.Split(',');
 
                     // Validar que la línea tenga exactamente 4 columnas
@@ -90,7 +52,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
                         continue; // Ignorar líneas mal formateadas
                     }
 
-                    // Comparar usuario y contraseña
+                    // Comparar el usuario y la contraseña con los datos de cada línea
                     if (datos[1] == user && datos[2] == password)
                     {
                         encontrado = true;
@@ -115,7 +77,7 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
             else
             {
-                // Crear el archivo por defecto si no existe
+                // Crear el archivo de usuarios por defecto si no existe
                 using (StreamWriter miEscritura = File.CreateText("usuario.txt"))
                 {
                     miEscritura.WriteLine("Administrador,Admin,123456,5551234567");
@@ -125,39 +87,46 @@ namespace Zas_Sistema_Administrativo_y_Inventario
             }
         }
 
-
+        // Método que se ejecuta al cambiar el estado del checkbox "Mostrar contraseña"
         private void mostrarContra_CheckedChanged(object sender, EventArgs e)
         {
+            // Mostrar o ocultar la contraseña según el estado del checkbox
             if (mostrarContra.Checked)
             {
-                txtContraLogin.PasswordChar = '\0';
-                hidden.Image = Properties.Resources.hidden;
+                txtContraLogin.PasswordChar = '\0'; // Mostrar caracteres
+                hidden.Image = Properties.Resources.hidden; // Cambiar la imagen del botón
             }
             else
             {
-                txtContraLogin.PasswordChar = '*';
-                
-                hidden.Image = Properties.Resources.eye;
+                txtContraLogin.PasswordChar = '*'; // Ocultar caracteres
+                hidden.Image = Properties.Resources.eye; // Cambiar la imagen del botón
             }
         }
 
+        // Método que se ejecuta al cambiar el texto en el campo de contraseña
         private void txtContraLogin_TextChanged(object sender, EventArgs e)
         {
+            // Ocultar caracteres en el campo de contraseña
             txtContraLogin.PasswordChar = '*';
         }
 
+        // Método que se ejecuta al cargar el formulario de inicio de sesión
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
         }
 
+        // Método que se ejecuta al hacer clic en el botón de ocultar/mostrar contraseña
         private void hidden_Click(object sender, EventArgs e)
         {
+            // Cambiar el estado del checkbox "Mostrar contraseña"
             mostrarContra.Checked = !mostrarContra.Checked;
         }
 
+        // Método que se ejecuta al cerrar el formulario de inicio de sesión
         private void InicioSesion_FormClosed(object sender, FormClosedEventArgs e)
         {
+            // Cerrar la aplicación
             Application.Exit();
         }
     }
